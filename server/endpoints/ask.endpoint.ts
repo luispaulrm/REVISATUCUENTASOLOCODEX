@@ -132,53 +132,17 @@ export const handleAskAuditor = async (req: Request, res: Response) => {
         RESPUESTA:
     `;
 
-    // Construct parts for the model (Text + Images)
-    const parts: any[] = [{ text: PROMPT_TEXT }];
+    // Import GeminiService para acceder a servicios
+    const { GeminiService } = require('../services');
+    const geminiService = new GeminiService();
 
-    if (images && Array.isArray(images)) {
-        for (const imgBase64 of images) {
-            // Check if it has the data:image/... base64 prefix and strip it if necessary for the API
-            // The API expects just the base64 data strings for inlineData
-            const match = imgBase64.match(/^data:(image\/[a-z]+);base64,(.+)$/);
-            if (match) {
-                parts.push({
-                    inlineData: {
-                        mimeType: match[1],
-                        data: match[2]
-                    }
-                });
-            } else {
-                // Assume it's raw base64 png if no prefix, or try to guess. Defaulting to jpeg for safety if unknown or assume validation upstream.
-                // Better to assume the frontend sends data URI.
-                // If raw base64 is sent, we might default to image/png
-                parts.push({
-                    inlineData: {
-                        mimeType: "image/png",
-                        data: imgBase64
-                    }
-                });
-            }
-        }
-    }
-
-    const apiKeys = getApiKeys();
-    if (apiKeys.length === 0) {
-        res.write("Error: No API Keys configured server-side.");
-        res.end();
-        return;
-    }
-
-    // --- FALLBACK LOGIC ---
-    // Models to try in order
+    // Construir modelos a intentar (primero OpenAI, luego Gemini)
     const modelsToTry = [
         AI_CONFIG.ACTIVE_MODEL,
-        AI_CONFIG.FALLBACK_MODEL,
-        "gemini-3-flash-preview",
-        "gemini-2.5-flash",
-        "gemini-1.5-pro",
-        "gemini-1.5-flash"
+        ...(Array.isArray(AI_CONFIG.FALLBACK_MODELS) ? AI_CONFIG.FALLBACK_MODELS : [])
     ].filter(Boolean);
-    // Removing duplicates while preserving order
+    
+    // Eliminar duplicados manteniendo orden
     const uniqueModels = [...new Set(modelsToTry)];
 
     let success = false;
@@ -188,24 +152,108 @@ export const handleAskAuditor = async (req: Request, res: Response) => {
         if (success) break;
         try {
             console.log(`[ASK] Attempting with model: ${modelName}`);
-            // Use Primary Key first, could rotate keys if needed but simple for now
-            const apiKey = apiKeys[0];
-            const genAI = new GoogleGenerativeAI(apiKey);
-            const model = genAI.getGenerativeModel({ model: modelName });
+            
+            // Detectar si es OpenAI o Gemini
+            const isOpenAI = modelName.startsWith('gpt-');
+            
+            if (isOpenAI) {
+                // ===== OPENAI FLOW =====
+                // Convertir imágenes al formato correcto
+                const messageContent: any = [
+                    { type: 'text', text: PROMPT_TEXT }
+                ];
 
-            const result = await model.generateContentStream(parts);
-
-            for await (const chunk of result.stream) {
-                const chunkText = chunk.text();
-                res.write(chunkText);
-
-                // Optional: Send usage metadata if available (Interrogation doesn't usually show usage in UI but good for logs)
-                const usage = chunk.usageMetadata;
-                if (usage) {
-                    console.log(`[ASK] Usage for ${modelName}: ${usage.totalTokenCount} tokens`);
+                if (images && Array.isArray(images)) {
+                    for (const imgBase64 of images) {
+                        // Extraer MIME type y data
+                        const match = imgBase64.match(/^data:(image\/[a-z]+);base64,(.+)$/);
+                        if (match) {
+                            const mimeType = match[1];
+                            const data = match[2];
+                            messageContent.push({
+                                type: 'image_url',
+                                image_url: {
+                                    url: `data:${mimeType};base64,${data}`
+                                }
+                            });
+                        } else {
+                            // Raw base64, asumir PNG
+                            messageContent.push({
+                                type: 'image_url',
+                                image_url: {
+                                    url: `data:image/png;base64,${imgBase64}`
+                                }
+                            });
+                        }
+                    }
                 }
+
+                // Usar OpenAIService
+                const result = await geminiService.extractWithStream(
+                    PROMPT_TEXT,
+                    images ? images.map((img: string) => ({ image: img, mimeType: 'image/png' })) : [],
+                    modelName
+                );
+
+                // Stream results
+                for await (const chunk of result) {
+                    if (chunk.text) {
+                        res.write(chunk.text);
+                    }
+                }
+                success = true;
+
+            } else {
+                // ===== GEMINI FLOW =====
+                // Construir parts en formato Gemini
+                const parts: any[] = [{ text: PROMPT_TEXT }];
+
+                if (images && Array.isArray(images)) {
+                    for (const imgBase64 of images) {
+                        const match = imgBase64.match(/^data:(image\/[a-z]+);base64,(.+)$/);
+                        if (match) {
+                            parts.push({
+                                inlineData: {
+                                    mimeType: match[1],
+                                    data: match[2]
+                                }
+                            });
+                        } else {
+                            parts.push({
+                                inlineData: {
+                                    mimeType: "image/png",
+                                    data: imgBase64
+                                }
+                            });
+                        }
+                    }
+                }
+
+                const apiKeys = getApiKeys();
+                if (apiKeys.length === 0) {
+                    res.write("Error: No API Keys configured server-side.");
+                    res.end();
+                    return;
+                }
+
+                const apiKey = apiKeys[0];
+                const genAI = new GoogleGenerativeAI(apiKey);
+                const model = genAI.getGenerativeModel({ model: modelName });
+
+                const result = await model.generateContentStream(parts);
+
+                for await (const chunk of result.stream) {
+                    const chunkText = chunk.text();
+                    res.write(chunkText);
+
+                    const usage = chunk.usageMetadata;
+                    if (usage) {
+                        console.log(`[ASK] Usage for ${modelName}: ${usage.totalTokenCount} tokens`);
+                    }
+                }
+                success = true;
             }
-            success = true;
+
         } catch (error: any) {
             console.warn(`[ASK] Failed with model ${modelName}: ${error.message}`);
             lastError = error;

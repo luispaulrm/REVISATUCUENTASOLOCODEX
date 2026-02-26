@@ -6,11 +6,13 @@ import dotenv from 'dotenv';
 import multer from 'multer';
 import { fileURLToPath } from 'url';
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import OpenAI from 'openai';
 import { GeminiService } from './services/gemini.service.js';
 import { performForensicAudit } from './services/auditEngine.service.js';
 import { classifyBillingModel } from './services/billingModelClassifier.service.js';
 import { ParserService } from "./services/parser.service.js";
-import { AI_CONFIG, AI_MODELS, GENERATION_CONFIG } from "./config/ai.config.js";
+import { OpenAIService } from './services/openai.service.js';
+import { AI_CONFIG, AI_MODELS, GENERATION_CONFIG, getSafeMaxTokensForModel } from "./config/ai.config.js";
 import { handlePamExtraction } from './endpoints/pam.endpoint.js';
 import { handleContractExtraction } from './endpoints/contract.endpoint.js';
 // No unnecessary imports
@@ -19,6 +21,7 @@ import { handleAskAuditor } from './endpoints/ask.endpoint.js';
 import { handlePreCheck } from './endpoints/precheck.endpoint.js';
 import { handleGeneratePdf } from './endpoints/generate-pdf.endpoint.js';
 import { handleCanonicalExtraction } from './endpoints/canonical.endpoint.js';
+import { handleM12VisualExtraction } from './endpoints/m12.endpoint.js';
 import { LearnContractEndpoint } from './endpoints/learn-contract.endpoint.js';
 import { learnFromContract } from './services/contractLearning.service.js';
 import { BILL_PROMPT } from './prompts/bill.prompt.js';
@@ -31,7 +34,14 @@ const __dirname = path.dirname(__filename);
 // ⚠️ CRITICAL: Only load dotenv in development
 // Railway injects env vars natively, dotenv.config() interferes
 if (process.env.NODE_ENV !== 'production') {
-    dotenv.config();
+    const envPath = path.join(__dirname, '.env');
+    if (fs.existsSync(envPath)) {
+        dotenv.config({ path: envPath });
+        console.log(`✅ Loaded environment from ${envPath}`);
+    } else {
+        dotenv.config(); // Fallback to default
+        console.log(`⚠️ .env not found at ${envPath}, using default`);
+    }
 }
 
 // ✅ Railway-compatible env access (Object.keys can fail in some runtimes)
@@ -82,6 +92,10 @@ if (GEMINI_QUA) {
 const GEMINI_QUI = envGet("GEMINI_API_KEY_QUINARY");
 if (GEMINI_QUI) {
     console.log(`✅ GEMINI_API_KEY_QUINARY LOADED: ${GEMINI_QUI.substring(0, 8)}...`);
+}
+const OPENAI_API_KEY = envGet("OPENAI_API_KEY");
+if (OPENAI_API_KEY) {
+    console.log(`✅ OPENAI_API_KEY LOADED: ${OPENAI_API_KEY.substring(0, 8)}...`);
 }
 console.log("=".repeat(50) + "\n");
 
@@ -151,23 +165,14 @@ const billingSchema = {
 
 // Redundant EXTRACTION_PROMPT removed. Now using BILL_PROMPT from ./prompts/bill.prompt.js
 
-// Helper to get all API keys
-const getApiKeys = () => {
-    const keys = [];
-    if (envGet("GEMINI_API_KEY")) keys.push(envGet("GEMINI_API_KEY"));
-    if (envGet("API_KEY")) keys.push(envGet("API_KEY"));
-    if (envGet("GEMINI_API_KEY_SECONDARY")) keys.push(envGet("GEMINI_API_KEY_SECONDARY"));
-    if (envGet("GEMINI_API_KEY_TERTIARY")) keys.push(envGet("GEMINI_API_KEY_TERTIARY"));
-    if (envGet("GEMINI_API_KEY_QUATERNARY")) keys.push(envGet("GEMINI_API_KEY_QUATERNARY"));
-    if (envGet("GEMINI_API_KEY_QUINARY")) keys.push(envGet("GEMINI_API_KEY_QUINARY"));
-    // Deduplicate
-    return [...new Set(keys)].filter((k): k is string => !!k && k.length > 5);
-};
+// Helper to get all API keys with provider context (Moved to GeminiService.discoverKeys)
+const getApiKeys = () => GeminiService.discoverKeys();
 
 app.post('/api/audit/ask', handleAskAuditor);
 app.post('/api/audit/pre-check', handlePreCheck);
 app.post('/api/generate-pdf', handleGeneratePdf);
 app.post('/api/extract-canonical', handleCanonicalExtraction);
+app.post('/api/m12/extract', handleM12VisualExtraction);
 app.post('/api/learn-contract', LearnContractEndpoint);
 import { handleChat } from './endpoints/chat.endpoint.js';
 app.post('/api/audit/chat', handleChat);
@@ -261,46 +266,71 @@ app.post('/api/extract', async (req, res) => {
         let resultStream: any;
         let lastError: any;
         let activeApiKey: string | undefined;
+        let activeProvider: 'google' | 'openai' = 'google';
 
-        const modelsToTry = [AI_CONFIG.ACTIVE_MODEL, AI_CONFIG.FALLBACK_MODEL, AI_MODELS.fallback2, AI_MODELS.fallback3].filter(Boolean);
+        const modelsToTry = [
+            AI_CONFIG.ACTIVE_MODEL,
+            ...AI_CONFIG.FALLBACK_MODELS,
+            AI_MODELS.openai_primary,
+            AI_MODELS.openai_mini
+        ].filter(Boolean);
 
         for (const modelName of modelsToTry) {
             if (!modelName) continue;
             console.log(`[AUTH] 🛡️ Attempting extraction with model: ${modelName}`);
 
-            for (const apiKey of apiKeys) {
+            const isModelOpenAI = modelName.startsWith('gpt') || modelName.includes('gpt');
+
+            for (const keyConfig of apiKeys) {
+                const { provider, key: apiKey } = keyConfig;
+
+                // Skip if provider doesn't match model type
+                if (isModelOpenAI && provider !== 'openai') continue;
+                if (!isModelOpenAI && provider !== 'google') continue;
+
                 const keyMask = apiKey ? (apiKey.substring(0, 4) + '...') : '???';
-                console.log(`[AUTH] Trying with API Key: ${keyMask} (Model: ${modelName})`);
+                console.log(`[AUTH] Trying with API Key: ${keyMask} (Provider: ${provider}, Model: ${modelName})`);
 
                 try {
                     forensicLog(`Intentando extracción con modelo ${modelName}...`);
-                    const genAI = new GoogleGenerativeAI(apiKey);
-                    const model = genAI.getGenerativeModel({
-                        model: modelName,
-                        generationConfig: {
-                            maxOutputTokens: GENERATION_CONFIG.maxOutputTokens,
-                            temperature: GENERATION_CONFIG.temperature,
-                            topP: GENERATION_CONFIG.topP,
-                            topK: GENERATION_CONFIG.topK
-                        }
-                    });
-
-                    forensicLog(`Enviando imagen al modelo ${modelName}...`);
 
                     const waitingInterval = setInterval(() => {
                         forensicLog(`⏳ Esperando respuesta de ${modelName}... (Procesando)`);
                     }, 10000);
 
                     const timeoutMs = 180000;
-                    const streamPromise = model.generateContentStream([
-                        { text: CSV_PROMPT },
-                        {
-                            inlineData: {
-                                data: image,
-                                mimeType: mimeType
+
+                    let streamPromise;
+                    if (provider === 'google') {
+                        const genAI = new GoogleGenerativeAI(apiKey);
+                        const model = genAI.getGenerativeModel({
+                            model: modelName,
+                            generationConfig: {
+                                maxOutputTokens: GENERATION_CONFIG.maxOutputTokens,
+                                temperature: GENERATION_CONFIG.temperature,
+                                topP: GENERATION_CONFIG.topP,
+                                topK: GENERATION_CONFIG.topK
                             }
-                        }
-                    ]);
+                        });
+                        streamPromise = model.generateContentStream([
+                            { text: CSV_PROMPT },
+                            {
+                                inlineData: {
+                                    data: image,
+                                    mimeType: mimeType
+                                }
+                            }
+                        ]);
+                    } else {
+                        // ✅ CORREGIDO: Usar OpenAIService para mejor manejo
+                        const openaiSvc = new OpenAIService(apiKey, forensicLog);
+                        const safeMaxTokens = getSafeMaxTokensForModel(modelName);
+                        streamPromise = openaiSvc.extractStream(image, mimeType, CSV_PROMPT, {
+                            model: modelName,
+                            maxTokens: safeMaxTokens,
+                            temperature: GENERATION_CONFIG.temperature
+                        });
+                    }
 
                     const timeoutPromise = new Promise((_, reject) => {
                         setTimeout(() => {
@@ -316,6 +346,7 @@ app.post('/api/extract', async (req, res) => {
 
                     if (resultStream) {
                         activeApiKey = apiKey;
+                        activeProvider = provider;
                         break;
                     }
 
@@ -323,17 +354,32 @@ app.post('/api/extract', async (req, res) => {
                     const errStr = (attemptError?.toString() || "") + (attemptError?.message || "");
                     const isTimeout = errStr.includes('Timeout');
                     const is429 = errStr.includes('429') || errStr.includes('Too Many Requests') || (attemptError?.status === 429);
+                    const is400 = errStr.includes('400') || attemptError?.status === 400;
+                    const is401 = errStr.includes('401') || attemptError?.status === 401;
+                    const is403 = errStr.includes('403') || attemptError?.status === 403;
 
                     if (isTimeout) {
                         forensicLog(`⏱️ Timeout: El modelo ${modelName} no respondió en 180 segundos. Intentando con la siguiente clave...`);
                         lastError = attemptError;
-                        continue; // Keep trying keys for the same model
+                        continue;
                     }
 
                     if (is429) {
-                        const backoffMs = 30000 + Math.random() * 30000; // 30-60s backoff
+                        const backoffMs = 30000 + Math.random() * 30000;
                         forensicLog(`⚠️ Quota 429 en ${keyMask}. Esperando ${Math.round(backoffMs / 1000)}s antes de intentar otra clave...`);
                         await new Promise(resolve => setTimeout(resolve, backoffMs));
+                        lastError = attemptError;
+                        continue;
+                    }
+
+                    if (is400) {
+                        forensicLog(`❌ Error 400 - Verificar max_completion_tokens o modelo disponible: ${attemptError.message}`);
+                        lastError = attemptError;
+                        continue;
+                    }
+
+                    if (is401 || is403) {
+                        forensicLog(`❌ Error ${attemptError.status} - API key inválida o acceso denegado`);
                         lastError = attemptError;
                         continue;
                     }
@@ -368,14 +414,18 @@ app.post('/api/extract', async (req, res) => {
         let maxIterations = 10000;
         let iteration = 0;
 
-        for await (const chunk of resultStream.stream) {
+        // ✅ CORREGIDO: Ambos streams usan el mismo formato ahora
+        const streamToIterate = activeProvider === 'google' ? resultStream.stream : resultStream;
+
+        for await (const chunk of streamToIterate) {
             iteration++;
             if (iteration > maxIterations) {
                 console.error(`[CRITICAL] Stream exceeded ${maxIterations} iterations. Breaking.`);
                 break;
             }
 
-            const chunkText = chunk.text();
+            // ✅ Normalizado: ambos providers devuelven .text como propiedad
+            const chunkText = activeProvider === 'google' ? chunk.text() : (chunk.text || "");
             fullText += chunkText;
 
             if (fullText.length === previousLength) {
@@ -392,15 +442,19 @@ app.post('/api/extract', async (req, res) => {
             console.log(`[CHUNK] +${chunkText.length} chars (Total: ${fullText.length})`);
             sendUpdate({ type: 'chunk', text: chunkText });
 
-            const usage = chunk.usageMetadata;
-            if (usage) {
-                const promptTokens = usage.promptTokenCount || 0;
-                const candidatesTokens = usage.candidatesTokenCount || 0;
-                const totalTokens = usage.totalTokenCount || 0;
-                const { estimatedCost, estimatedCostCLP } = GeminiService.calculateCost(AI_CONFIG.ACTIVE_MODEL, promptTokens, candidatesTokens);
+            // ✅ CORREGIDO: Normalizar metadata de ambos providers
+            const usageMetadata = activeProvider === 'google' 
+                ? (chunk as any).usageMetadata 
+                : (chunk as any).usageMetadata;
+            
+            if (usageMetadata) {
+                const promptTokens = usageMetadata.promptTokenCount || 0;
+                const completionTokens = usageMetadata.completionTokenCount || 0;
+                const totalTokens = usageMetadata.totalTokenCount || 0;
+                const { estimatedCost, estimatedCostCLP } = GeminiService.calculateCost(AI_CONFIG.ACTIVE_MODEL, promptTokens, completionTokens);
                 sendUpdate({
                     type: 'usage',
-                    usage: { promptTokens, candidatesTokens, totalTokens, estimatedCost, estimatedCostCLP }
+                    usage: { promptTokens, candidatesTokens: completionTokens, totalTokens, estimatedCost, estimatedCostCLP }
                 });
             } else {
                 sendUpdate({ type: 'progress', length: fullText.length });

@@ -16,7 +16,9 @@
     "preview": "vite preview",
     "start": "tsx server/server.ts",
     "server": "node --watch --import tsx server/server.ts",
-    "dev:all": "node scripts/update-version.js && concurrently \"npm run server\" \"node scripts/wait-for-port.js 5000 && npm run dev\""
+    "dev:all": "node scripts/update-version.js && concurrently \"npm run server\" \"node scripts/wait-for-port.js 5000 && npm run dev\"",
+    "check-config": "node --import tsx server/check-config.ts",
+    "test:apis": "node --import tsx server/test-apis.ts"
   },
   "dependencies": {
     "@google/genai": "^1.34.0",
@@ -28,6 +30,7 @@
     "jsonrepair": "^3.13.1",
     "lucide-react": "^0.562.0",
     "multer": "^1.4.5-lts.1",
+    "openai": "^6.25.0",
     "p-limit": "^7.3.0",
     "pdfjs-dist": "^5.4.530",
     "playwright": "^1.58.1",

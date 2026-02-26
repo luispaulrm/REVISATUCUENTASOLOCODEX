@@ -75,6 +75,11 @@ export default function CanonicalGeneratorApp() {
         return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
     };
 
+    const formatCLP = (value: number) => {
+        const safeValue = Number.isFinite(value) ? Math.max(0, Math.round(value)) : 0;
+        return new Intl.NumberFormat('es-CL', { maximumFractionDigits: 0 }).format(safeValue);
+    };
+
     const handleStopAnalysis = () => {
         if (abortControllerRef.current) {
             abortControllerRef.current.abort();
@@ -87,10 +92,25 @@ export default function CanonicalGeneratorApp() {
         const file = event.target.files?.[0];
         if (!file) return;
 
+        const allowedMimeTypes = new Set([
+            'application/pdf',
+            'image/png',
+            'image/jpeg',
+            'image/gif',
+            'image/webp'
+        ]);
+
+        if (!allowedMimeTypes.has(file.type)) {
+            setStatus(AppStatus.ERROR);
+            setError(`Formato no soportado: ${file.type || 'desconocido'}. Usa PDF, PNG, JPEG, GIF o WEBP.`);
+            return;
+        }
+
         setStatus(AppStatus.UPLOADING);
         setError(null);
         setCanonicalResult(null);
         setReportMetrics(null);
+        setRealTimeUsage(null);
         setFileName(file.name);
         setLogs([]);
         localStorage.removeItem('canonical_contract_result'); // Fix: Force clear storage to prevent stale mix
@@ -139,14 +159,21 @@ export default function CanonicalGeneratorApp() {
                         try {
                             const update = JSON.parse(line);
                             console.log('[CANONICAL_STREAM]', update);
+                            if (update.type === 'error') {
+                                setError(update.message || 'Error inesperado durante el streaming');
+                                setStatus(AppStatus.ERROR);
+                                return;
+                            }
                             if (update.type === 'chunk') addLog(update.text);
                             if (update.type === 'metrics') {
+                                const costCLP = Number(update.metrics.cost ?? update.metrics.costCLP ?? 0);
+                                const costUSD = Number(update.metrics.costUSD ?? (costCLP / 1000));
                                 setRealTimeUsage(prev => ({
                                     promptTokens: (prev?.promptTokens || 0) + (update.metrics.input || 0),
                                     candidatesTokens: (prev?.candidatesTokens || 0) + (update.metrics.output || 0),
                                     totalTokens: (prev?.totalTokens || 0) + (update.metrics.input || 0) + (update.metrics.output || 0),
-                                    estimatedCost: (prev?.estimatedCost || 0) + (update.metrics.cost / 900), // Approx USD
-                                    estimatedCostCLP: (prev?.estimatedCostCLP || 0) + (update.metrics.cost || 0)
+                                    estimatedCost: (prev?.estimatedCost || 0) + costUSD,
+                                    estimatedCostCLP: (prev?.estimatedCostCLP || 0) + costCLP
                                 }));
                             }
                             if (update.type === 'final') {
@@ -161,9 +188,11 @@ export default function CanonicalGeneratorApp() {
                                 localStorage.setItem('canonical_contract_result', JSON.stringify(update.data));
                                 setStatus(AppStatus.SUCCESS);
                             }
-                            if (update.type === 'error') throw new Error(update.message);
                         } catch (e) {
                             console.error('[CANONICAL_STREAM] Error parsing update line', e, line);
+                            setError('Error al procesar una línea del stream');
+                            setStatus(AppStatus.ERROR);
+                            return;
                         }
                     }
                 }
@@ -426,7 +455,7 @@ export default function CanonicalGeneratorApp() {
                         {/* END HEADER */}
 
                         <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-slate-300 rounded-3xl bg-white cursor-pointer hover:bg-slate-50 hover:border-indigo-500 transition-all group">
-                            <input type="file" className="hidden" accept="application/pdf,image/*" onChange={handleFileUpload} />
+                            <input type="file" className="hidden" accept="application/pdf,image/png,image/jpeg,image/gif,image/webp" onChange={handleFileUpload} />
                             <div className="flex flex-col items-center p-6">
                                 <div className="p-4 bg-slate-50 rounded-2xl mb-4 text-slate-400 group-hover:text-indigo-600 transition-colors">
                                     <FileText size={32} />
@@ -729,7 +758,7 @@ export default function CanonicalGeneratorApp() {
                                     <div className="flex flex-col items-end">
                                         <span className="text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">Est. Cost</span>
                                         <span className="font-mono text-xl font-black text-white tracking-tight">
-                                            ${realTimeUsage ? realTimeUsage.estimatedCostCLP : '0'} <span className="text-[10px] text-slate-600 font-sans">CLP</span>
+                                            ${realTimeUsage ? formatCLP(realTimeUsage.estimatedCostCLP) : '0'} <span className="text-[10px] text-slate-600 font-sans">CLP</span>
                                         </span>
                                         <div className="flex items-center gap-1 mt-1">
                                             <ShieldCheck size={10} className="text-emerald-500" />
