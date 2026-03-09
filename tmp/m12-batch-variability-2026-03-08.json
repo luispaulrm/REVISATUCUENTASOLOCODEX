@@ -1,0 +1,913 @@
+{
+  "generatedAt": "2026-03-09T00:05:56.462Z",
+  "folder": "C:/Users/drlui/OneDrive/Documentos/INDISA/PLAN PRUEBA",
+  "aggregate": {
+    "total": 25,
+    "ok": 25,
+    "fail": 0,
+    "variants": {
+      "GRID_1_2_3_4": 1,
+      "PREFERENTE_LIBRE_ELECCION": 23,
+      "SINGLE_MODE": 1
+    },
+    "reconstructibility": {
+      "NO_VERIFICABLE": 2,
+      "PARCIAL": 18,
+      "VERIFIABLE": 5
+    },
+    "avgScore": 0.82,
+    "highWarningFiles": [
+      {
+        "file": "13-LFS409-24.pdf",
+        "warnings": 19,
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "score": 0.89
+      },
+      {
+        "file": "BCGL250300.pdf",
+        "warnings": 24,
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "score": 0.66
+      },
+      {
+        "file": "BCN250400.pdf",
+        "warnings": 10,
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "score": 0.87
+      },
+      {
+        "file": "BFDC241122.pdf",
+        "warnings": 64,
+        "variant": "SINGLE_MODE",
+        "score": 0
+      },
+      {
+        "file": "BPRU24111012.pdf",
+        "warnings": 10,
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "score": 0.86
+      },
+      {
+        "file": "PPS25120.pdf",
+        "warnings": 11,
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "score": 0.79
+      },
+      {
+        "file": "PPS25140.pdf",
+        "warnings": 11,
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "score": 0.79
+      },
+      {
+        "file": "UC100700625.pdf",
+        "warnings": 27,
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "score": 0.38
+      },
+      {
+        "file": "VPGL250226.pdf",
+        "warnings": 22,
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "score": 0.69
+      },
+      {
+        "file": "VPLU241143.pdf",
+        "warnings": 12,
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "score": 0.8
+      },
+      {
+        "file": "VPTA241079.pdf",
+        "warnings": 18,
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "score": 0.74
+      }
+    ],
+    "lowScoreFiles": [
+      {
+        "file": "BCGL250300.pdf",
+        "score": 0.66,
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "unresolvedColumns": [
+          "atenciones_de_urgencia_integral_1_11",
+          "clinica_davila_copago_fijo_urgencia_simple",
+          "clinica_davila_vespucio_copago_fijo_urgencia_compleja",
+          "clinica_santa_copago_fijo_urgencia_simple",
+          "maria_copago_fijo_urgencia_compleja",
+          "columna_6",
+          "identificacion_unica_del_arancel",
+          "b1",
+          "n_dias"
+        ]
+      },
+      {
+        "file": "BFDC241122.pdf",
+        "score": 0,
+        "variant": "SINGLE_MODE",
+        "unresolvedColumns": [
+          "columna_1",
+          "copago_fijo_urgencia_simple",
+          "copago_fijo_urgencia_compleja",
+          "cobertura_sin_tope",
+          "recibe_atenciones_hospitalarias_y_ambulatorias_sin_topes_por_evento_en_las_clinicas_indicadas_en_tu_plan_cerrado_de_salud",
+          "atenciones_de_urgencia_integral_1_3",
+          "clinica_davila_clinica_davila_vespucio_copago_fijo_urgencia_simple",
+          "clinica_davila_clinica_davila_vespucio_copago_fijo_urgencia_compleja",
+          "identificacion_unica_del_arancel",
+          "b1",
+          "n_dias"
+        ]
+      },
+      {
+        "file": "UC100700625.pdf",
+        "score": 0.38,
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "unresolvedColumns": [
+          "ambulatorias",
+          "columna_2",
+          "columna_3",
+          "columna_4",
+          "columna_5",
+          "columna_6"
+        ]
+      },
+      {
+        "file": "VPGL250226.pdf",
+        "score": 0.69,
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "unresolvedColumns": [
+          "40_sin_tope_clinica_santa_maria_hospital_uc_clinica_indisa_clinica_davila_clinica_davila_vespucio_clinica_redsalud_santiago_y_providencia_solo_con_bonos",
+          "sin_tope",
+          "25_de_la_cobertura_generica",
+          "identificacion_unica_del_arancel",
+          "v20",
+          "n_dias"
+        ]
+      }
+    ]
+  },
+  "results": [
+    {
+      "file": "13-CORE106-25.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 7,
+        "tableCount": 6
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 19
+      },
+      "canonical": {
+        "sections": 19,
+        "items": 90,
+        "rules": 154,
+        "reconstructibility": "PARCIAL",
+        "score": 0.96,
+        "unresolvedRowCount": 4,
+        "unresolvedColumnCount": 1,
+        "warningCount": 5,
+        "unresolvedColumns": [
+          "beneficios_asociados_a_ciertos_prestadores_numero_del_prestador"
+        ]
+      }
+    },
+    {
+      "file": "13-CORE206-25.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 7,
+        "tableCount": 6
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 19
+      },
+      "canonical": {
+        "sections": 19,
+        "items": 91,
+        "rules": 149,
+        "reconstructibility": "PARCIAL",
+        "score": 0.96,
+        "unresolvedRowCount": 4,
+        "unresolvedColumnCount": 1,
+        "warningCount": 5,
+        "unresolvedColumns": [
+          "beneficios_asociados_a_ciertos_prestadores_numero_del_prestador"
+        ]
+      }
+    },
+    {
+      "file": "13-CORE306-25.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 7,
+        "tableCount": 6
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 19
+      },
+      "canonical": {
+        "sections": 19,
+        "items": 90,
+        "rules": 148,
+        "reconstructibility": "PARCIAL",
+        "score": 0.96,
+        "unresolvedRowCount": 4,
+        "unresolvedColumnCount": 1,
+        "warningCount": 5,
+        "unresolvedColumns": [
+          "beneficios_asociados_a_ciertos_prestadores_numero_del_prestador"
+        ]
+      }
+    },
+    {
+      "file": "13-CORE406-25.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 7,
+        "tableCount": 6
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 18
+      },
+      "canonical": {
+        "sections": 18,
+        "items": 92,
+        "rules": 160,
+        "reconstructibility": "PARCIAL",
+        "score": 0.99,
+        "unresolvedRowCount": 1,
+        "unresolvedColumnCount": 1,
+        "warningCount": 2,
+        "unresolvedColumns": [
+          "beneficios_asociados_a_ciertos_prestadores_numero_del_prestador"
+        ]
+      }
+    },
+    {
+      "file": "13-EFS0510-24.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 7,
+        "tableCount": 5
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 20
+      },
+      "canonical": {
+        "sections": 20,
+        "items": 95,
+        "rules": 165,
+        "reconstructibility": "PARCIAL",
+        "score": 0.95,
+        "unresolvedRowCount": 5,
+        "unresolvedColumnCount": 1,
+        "warningCount": 6,
+        "unresolvedColumns": [
+          "beneficios_asociados_a_ciertos_prestadores_numero_del_prestador"
+        ]
+      }
+    },
+    {
+      "file": "13-LFS409-24.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 7,
+        "tableCount": 8
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 23
+      },
+      "canonical": {
+        "sections": 23,
+        "items": 103,
+        "rules": 169,
+        "reconstructibility": "PARCIAL",
+        "score": 0.89,
+        "unresolvedRowCount": 11,
+        "unresolvedColumnCount": 8,
+        "warningCount": 19,
+        "unresolvedColumns": [
+          "atencion_integral_de_urgencia_d_l",
+          "incluye_consulta_medica_de_urgencia_insumos_medicamentos_imagenologia_examenes_procedimientos_y_honorarios_medicos_solo_en_clinica_puerto_varas_clinica_alemana_osorno_y_clinica_andes_salud_puerto_montt_en_clinica_alemana_osorno_y_clinica_andes_salud_puerto_montt_solo_urgencia_adulto_clinica_alemana_osorno_clinica_andes_salud_puerto_montt_urgencia_simple",
+          "incluye_consulta_medica_de_urgencia_insumos_medicamentos_imagenologia_examenes_procedimientos_y_honorarios_medicos_solo_en_clinica_puerto_varas_clinica_alemana_osorno_y_clinica_andes_salud_puerto_montt_en_clinica_alemana_osorno_y_clinica_andes_salud_puerto_montt_solo_urgencia_adulto_clinica_alemana_osorno_clinica_andes_salud_puerto_montt_urgencia_compleja",
+          "incluye_consulta_medica_de_urgencia_insumos_medicamentos_imagenologia_examenes_procedimientos_y_honorarios_medicos_solo_en_clinica_puerto_varas_clinica_alemana_osorno_y_clinica_andes_salud_puerto_montt_en_clinica_alemana_osorno_y_clinica_andes_salud_puerto_montt_solo_urgencia_adulto_clinica_puerto_varas_urgencia_simple",
+          "incluye_consulta_medica_de_urgencia_insumos_medicamentos_imagenologia_examenes_procedimientos_y_honorarios_medicos_solo_en_clinica_puerto_varas_clinica_alemana_osorno_y_clinica_andes_salud_puerto_montt_en_clinica_alemana_osorno_y_clinica_andes_salud_puerto_montt_solo_urgencia_adulto_clinica_puerto_varas_urgencia_compleja",
+          "columna_1",
+          "columna_2",
+          "beneficios_asociados_a_ciertos_prestadores_numero_del_prestador"
+        ]
+      }
+    },
+    {
+      "file": "BCGL250300.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 5,
+        "tableCount": 7
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 5
+      },
+      "canonical": {
+        "sections": 5,
+        "items": 44,
+        "rules": 64,
+        "reconstructibility": "PARCIAL",
+        "score": 0.66,
+        "unresolvedRowCount": 15,
+        "unresolvedColumnCount": 9,
+        "warningCount": 24,
+        "unresolvedColumns": [
+          "atenciones_de_urgencia_integral_1_11",
+          "clinica_davila_copago_fijo_urgencia_simple",
+          "clinica_davila_vespucio_copago_fijo_urgencia_compleja",
+          "clinica_santa_copago_fijo_urgencia_simple",
+          "maria_copago_fijo_urgencia_compleja",
+          "columna_6",
+          "identificacion_unica_del_arancel",
+          "b1",
+          "n_dias"
+        ]
+      }
+    },
+    {
+      "file": "BCN250400.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 4,
+        "tableCount": 4
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 9
+      },
+      "canonical": {
+        "sections": 9,
+        "items": 46,
+        "rules": 81,
+        "reconstructibility": "PARCIAL",
+        "score": 0.87,
+        "unresolvedRowCount": 6,
+        "unresolvedColumnCount": 4,
+        "warningCount": 10,
+        "unresolvedColumns": [
+          "identificacion_unica_del_arancel",
+          "columna_2",
+          "b1",
+          "tiempos_maximos_de_espera_en_dias_corridos_en_los_prestadores_identificados_en_la_cobertura_preferente_mientras_sea_medicamente_aconsejable_n_dias"
+        ]
+      }
+    },
+    {
+      "file": "BFDC241122.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 9,
+        "tableCount": 9
+      },
+      "calco": {
+        "variant": "SINGLE_MODE",
+        "sections": 8
+      },
+      "canonical": {
+        "sections": 8,
+        "items": 53,
+        "rules": 0,
+        "reconstructibility": "NO_VERIFICABLE",
+        "score": 0,
+        "unresolvedRowCount": 53,
+        "unresolvedColumnCount": 11,
+        "warningCount": 64,
+        "unresolvedColumns": [
+          "columna_1",
+          "copago_fijo_urgencia_simple",
+          "copago_fijo_urgencia_compleja",
+          "cobertura_sin_tope",
+          "recibe_atenciones_hospitalarias_y_ambulatorias_sin_topes_por_evento_en_las_clinicas_indicadas_en_tu_plan_cerrado_de_salud",
+          "atenciones_de_urgencia_integral_1_3",
+          "clinica_davila_clinica_davila_vespucio_copago_fijo_urgencia_simple",
+          "clinica_davila_clinica_davila_vespucio_copago_fijo_urgencia_compleja",
+          "identificacion_unica_del_arancel",
+          "b1",
+          "n_dias"
+        ]
+      }
+    },
+    {
+      "file": "BPRU24111012.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 4,
+        "tableCount": 4
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 8
+      },
+      "canonical": {
+        "sections": 8,
+        "items": 51,
+        "rules": 76,
+        "reconstructibility": "PARCIAL",
+        "score": 0.86,
+        "unresolvedRowCount": 7,
+        "unresolvedColumnCount": 3,
+        "warningCount": 10,
+        "unresolvedColumns": [
+          "identificacion_unica_del_arancel",
+          "b1",
+          "n_dias"
+        ]
+      }
+    },
+    {
+      "file": "CMBS090625.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 4,
+        "tableCount": 3
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 7
+      },
+      "canonical": {
+        "sections": 7,
+        "items": 56,
+        "rules": 103,
+        "reconstructibility": "PARCIAL",
+        "score": 0.93,
+        "unresolvedRowCount": 4,
+        "unresolvedColumnCount": 2,
+        "warningCount": 6,
+        "unresolvedColumns": [
+          "identificacion_unica_del_arancel",
+          "isapre_cruzblanca_31"
+        ]
+      }
+    },
+    {
+      "file": "E70700625.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 6,
+        "tableCount": 10
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 2
+      },
+      "canonical": {
+        "sections": 2,
+        "items": 16,
+        "rules": 26,
+        "reconstructibility": "PARCIAL",
+        "score": 0.81,
+        "unresolvedRowCount": 3,
+        "unresolvedColumnCount": 1,
+        "warningCount": 4,
+        "unresolvedColumns": [
+          "beneficios_del_arancel_esencial_1"
+        ]
+      }
+    },
+    {
+      "file": "EI80500625.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 6,
+        "tableCount": 9
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 3
+      },
+      "canonical": {
+        "sections": 3,
+        "items": 19,
+        "rules": 27,
+        "reconstructibility": "PARCIAL",
+        "score": 0.74,
+        "unresolvedRowCount": 5,
+        "unresolvedColumnCount": 0,
+        "warningCount": 5,
+        "unresolvedColumns": []
+      }
+    },
+    {
+      "file": "MX2246050.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 6,
+        "tableCount": 7
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 4
+      },
+      "canonical": {
+        "sections": 4,
+        "items": 28,
+        "rules": 55,
+        "reconstructibility": "VERIFIABLE",
+        "score": 1,
+        "unresolvedRowCount": 0,
+        "unresolvedColumnCount": 0,
+        "warningCount": 0,
+        "unresolvedColumns": []
+      }
+    },
+    {
+      "file": "pleno 847.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 4,
+        "tableCount": 5
+      },
+      "calco": {
+        "variant": "GRID_1_2_3_4",
+        "sections": 4
+      },
+      "canonical": {
+        "sections": 4,
+        "items": 43,
+        "rules": 42,
+        "reconstructibility": "PARCIAL",
+        "score": 0.98,
+        "unresolvedRowCount": 1,
+        "unresolvedColumnCount": 1,
+        "warningCount": 2,
+        "unresolvedColumns": [
+          "cobertura"
+        ]
+      }
+    },
+    {
+      "file": "PPS25120.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 4,
+        "tableCount": 6
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 2
+      },
+      "canonical": {
+        "sections": 2,
+        "items": 48,
+        "rules": 76,
+        "reconstructibility": "PARCIAL",
+        "score": 0.79,
+        "unresolvedRowCount": 10,
+        "unresolvedColumnCount": 1,
+        "warningCount": 11,
+        "unresolvedColumns": [
+          "cobertura"
+        ]
+      }
+    },
+    {
+      "file": "PPS25140.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 4,
+        "tableCount": 6
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 2
+      },
+      "canonical": {
+        "sections": 2,
+        "items": 48,
+        "rules": 76,
+        "reconstructibility": "PARCIAL",
+        "score": 0.79,
+        "unresolvedRowCount": 10,
+        "unresolvedColumnCount": 1,
+        "warningCount": 11,
+        "unresolvedColumns": [
+          "cobertura"
+        ]
+      }
+    },
+    {
+      "file": "SL22510080.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 6,
+        "tableCount": 8
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 2
+      },
+      "canonical": {
+        "sections": 2,
+        "items": 33,
+        "rules": 65,
+        "reconstructibility": "VERIFIABLE",
+        "score": 0.91,
+        "unresolvedRowCount": 3,
+        "unresolvedColumnCount": 0,
+        "warningCount": 3,
+        "unresolvedColumns": []
+      }
+    },
+    {
+      "file": "SL2254545.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 6,
+        "tableCount": 8
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 2
+      },
+      "canonical": {
+        "sections": 2,
+        "items": 32,
+        "rules": 63,
+        "reconstructibility": "VERIFIABLE",
+        "score": 0.97,
+        "unresolvedRowCount": 1,
+        "unresolvedColumnCount": 0,
+        "warningCount": 1,
+        "unresolvedColumns": []
+      }
+    },
+    {
+      "file": "ST1244060.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 6,
+        "tableCount": 7
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 2
+      },
+      "canonical": {
+        "sections": 2,
+        "items": 32,
+        "rules": 63,
+        "reconstructibility": "VERIFIABLE",
+        "score": 0.91,
+        "unresolvedRowCount": 3,
+        "unresolvedColumnCount": 0,
+        "warningCount": 3,
+        "unresolvedColumns": []
+      }
+    },
+    {
+      "file": "ST1245080.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 6,
+        "tableCount": 7
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 2
+      },
+      "canonical": {
+        "sections": 2,
+        "items": 32,
+        "rules": 63,
+        "reconstructibility": "VERIFIABLE",
+        "score": 0.91,
+        "unresolvedRowCount": 3,
+        "unresolvedColumnCount": 0,
+        "warningCount": 3,
+        "unresolvedColumns": []
+      }
+    },
+    {
+      "file": "UC100700625.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 6,
+        "tableCount": 12
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 3
+      },
+      "canonical": {
+        "sections": 3,
+        "items": 34,
+        "rules": 26,
+        "reconstructibility": "NO_VERIFICABLE",
+        "score": 0.38,
+        "unresolvedRowCount": 21,
+        "unresolvedColumnCount": 6,
+        "warningCount": 27,
+        "unresolvedColumns": [
+          "ambulatorias",
+          "columna_2",
+          "columna_3",
+          "columna_4",
+          "columna_5",
+          "columna_6"
+        ]
+      }
+    },
+    {
+      "file": "VPGL250226.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 5,
+        "tableCount": 6
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 5
+      },
+      "canonical": {
+        "sections": 5,
+        "items": 52,
+        "rules": 57,
+        "reconstructibility": "PARCIAL",
+        "score": 0.69,
+        "unresolvedRowCount": 16,
+        "unresolvedColumnCount": 6,
+        "warningCount": 22,
+        "unresolvedColumns": [
+          "40_sin_tope_clinica_santa_maria_hospital_uc_clinica_indisa_clinica_davila_clinica_davila_vespucio_clinica_redsalud_santiago_y_providencia_solo_con_bonos",
+          "sin_tope",
+          "25_de_la_cobertura_generica",
+          "identificacion_unica_del_arancel",
+          "v20",
+          "n_dias"
+        ]
+      }
+    },
+    {
+      "file": "VPLU241143.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 5,
+        "tableCount": 6
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 6
+      },
+      "canonical": {
+        "sections": 6,
+        "items": 45,
+        "rules": 59,
+        "reconstructibility": "PARCIAL",
+        "score": 0.8,
+        "unresolvedRowCount": 9,
+        "unresolvedColumnCount": 3,
+        "warningCount": 12,
+        "unresolvedColumns": [
+          "identificacion_unica_del_arancel",
+          "v20",
+          "tiempos_maximos_de_espera_en_dias_corridos_en_los_prestadores_identificados_en_la_cobertura_preferente_mientras_sea_medicamente_aconsejable_n_dias"
+        ]
+      }
+    },
+    {
+      "file": "VPTA241079.pdf",
+      "ok": true,
+      "modeUsed": "fast",
+      "raw": {
+        "status": "succeeded",
+        "modelId": "prebuilt-layout",
+        "stringIndexType": "utf16CodeUnit",
+        "pageCount": 5,
+        "tableCount": 6
+      },
+      "calco": {
+        "variant": "PREFERENTE_LIBRE_ELECCION",
+        "sections": 6
+      },
+      "canonical": {
+        "sections": 6,
+        "items": 47,
+        "rules": 61,
+        "reconstructibility": "PARCIAL",
+        "score": 0.74,
+        "unresolvedRowCount": 12,
+        "unresolvedColumnCount": 6,
+        "warningCount": 18,
+        "unresolvedColumns": [
+          "40_sin_tope_clinica_alemana_clinica_san_carlos_de_apoquindo_clinica_universidad_de_los_andes_clinica_santa_maria_clinica_meds_clinica_davila_clinica_davila_vespucio_solo_con_bonos",
+          "sin_tope",
+          "25_de_la_cobertura_generica",
+          "identificacion_unica_del_arancel",
+          "v20",
+          "n_dias"
+        ]
+      }
+    }
+  ]
+}

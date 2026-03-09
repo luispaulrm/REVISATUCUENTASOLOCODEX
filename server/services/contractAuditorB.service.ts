@@ -1498,6 +1498,7 @@ DEFINITIONS:
 - "Sin Tope" ONLY exists if explicitly stated.
 - "Tope por evento" = item ceiling.
 - "Tope anual" = max ceiling per year.
+- Extraction discipline = geometry first. If a value is not explicitly visible in the row band or merged-cell span, keep it as UNKNOWN.
 
 CONTEXT:
 ${suggestedSchema ? `Suggested Column Schema (use these IDs if they match): ${JSON.stringify(suggestedSchema)}` : "No schema suggested yet. Identify headers first."}
@@ -1602,6 +1603,9 @@ SPECIAL RULES:
 - Copago Fijo (Urgencia) -> Mapear a "copago_fijo" y poner "tipo": "COPAGO_FIJO" en el tope.
 - Empty Cells (-) -> "UNKNOWN", nunca "SIN_TOPE".
 - Merged Cells & Spatial Index -> Use "spatialIndex" to see which row range a merged cell spans. If a cell spans rows 5-10, APPLY ITS RULES TO ALL ITEMS IN ROWS 5-10.
+- Propagation discipline -> Only propagate when the merged-cell span or topology makes the propagation visually defensible.
+- No silent completion -> If a tope anual is not explicitly visible for the row or merged block, keep estado "UNKNOWN".
+- No contract-wide assumptions -> Do not assume "Sin Tope" or annual limits from general contract knowledge. Use page evidence only.
 - Multi-Percentage Blocks -> If a preferente block contains "100% DÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡vila, 90% Indisa", create TWO rules in the "rules" array.
 - Rule Conditions extraction -> MUST look for text patterns in the cells:
     * "(MÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©dicos Staff)" or "(Staff)" -> Add "MEDICOS_STAFF" to condiciones.
@@ -1613,6 +1617,7 @@ SPECIAL RULES:
     * If cell has a value (e.g., "5 UF"), set estado: "CON_TOPE", valor: 5, unidad: "UF".
     * TOPE ANUAL INFERENCE (A2): If tope_evento.estado is "SIN_TOPE_ITEM" and no specific annual limit/number is shown for that item, SET tope_anual.estado: "SIN_TOPE_ITEM" and unidad: "SIN_TOPE" by default.
     * sujeto_tope_general_anual: ALMOST ALWAYS TRUE for Isapre contracts, unless item explicitly says "No sujeto a tope general".
+    * Override for M12 discipline: if no explicit annual value is visible in the row band or merged block, prefer estado "UNKNOWN" over inferred "SIN_TOPE_ITEM".
 - Row-Band Projection -> To find the Libre ElecciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n limits (often on the far right), track the y0-y1 coordinates (the "Row Band") of the service item. Look for cells intersecting this Y-band on the right side.
 - DETECTED SCHEMA -> "preferente_pct_col" and "preferente_tope_evento_col" MUST NOT BE THE SAME CELL. If a merged cell contains both % and Tope, leave the column identifiers as null.
 

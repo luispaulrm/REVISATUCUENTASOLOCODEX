@@ -18,6 +18,15 @@ export interface OpenAIStreamChunk {
     };
 }
 
+export interface OpenAIExtractResult {
+    text: string;
+    usage?: {
+        promptTokenCount: number;
+        completionTokenCount: number;
+        totalTokenCount: number;
+    };
+}
+
 export class OpenAIService {
     private client: OpenAI;
     private logCallback?: (msg: string) => void;
@@ -87,7 +96,7 @@ export class OpenAIService {
      * Extrae texto e imágenes con soporte Vision completo
      * SIN streaming (para respuestas estructuradas)
      */
-    async extract(
+    async extractWithUsage(
         imageBase64: string,
         mimeType: string,
         prompt: string,
@@ -96,8 +105,9 @@ export class OpenAIService {
             maxTokens?: number;
             temperature?: number;
             jsonMode?: boolean;
+            imageDetail?: 'low' | 'high' | 'auto';
         } = {}
-    ): Promise<string> {
+    ): Promise<OpenAIExtractResult> {
         const model = options.model || 'gpt-4o';
         const safeMaxTokens = this.getSafeMaxTokens(model);
         const maxTokens = Math.min(options.maxTokens || safeMaxTokens, safeMaxTokens);
@@ -122,7 +132,7 @@ export class OpenAIService {
                     type: 'image_url',
                     image_url: {
                         url: imageUrl,
-                        detail: 'high' // Máxima calidad para OCR
+                        detail: options.imageDetail || 'high'
                     }
                 });
                 this.log(`📸 Imagen agregada (${mimeType})`);
@@ -152,11 +162,34 @@ export class OpenAIService {
                 this.log(`📊 Tokens - Input: ${usage.prompt_tokens}, Output: ${usage.completion_tokens}, Total: ${usage.total_tokens}`);
             }
 
-            return text;
+            return {
+                text,
+                usage: usage ? {
+                    promptTokenCount: usage.prompt_tokens || 0,
+                    completionTokenCount: usage.completion_tokens || 0,
+                    totalTokenCount: usage.total_tokens || 0
+                } : undefined
+            };
         } catch (err: any) {
             this.handleOpenAIError(err, model);
             throw err;
         }
+    }
+
+    async extract(
+        imageBase64: string,
+        mimeType: string,
+        prompt: string,
+        options: {
+            model?: string;
+            maxTokens?: number;
+            temperature?: number;
+            jsonMode?: boolean;
+            imageDetail?: 'low' | 'high' | 'auto';
+        } = {}
+    ): Promise<string> {
+        const result = await this.extractWithUsage(imageBase64, mimeType, prompt, options);
+        return result.text;
     }
 
     /**
@@ -211,6 +244,7 @@ export class OpenAIService {
                 top_p: 0.95,
                 stream: true
             };
+            (requestConfig as any).stream_options = { include_usage: true };
 
             if (options.jsonMode) {
                 requestConfig.response_format = { type: 'json_object' };

@@ -1,0 +1,174 @@
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+Error [TransformError]: Transform failed with 1 error:
+C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:535:8: ERROR: Expected identifier but found "`r`"
+    at failureErrorWithLog (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:1467:15)
+    at C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:736:50
+    at responseCallbacks.<computed> (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+
+Node.js v24.11.0
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+Error [TransformError]: Transform failed with 1 error:
+C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:535:8: ERROR: Expected identifier but found "`r`"
+    at failureErrorWithLog (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:1467:15)
+    at C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:736:50
+    at responseCallbacks.<computed> (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+
+Node.js v24.11.0
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+Error [TransformError]: Transform failed with 1 error:
+C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:535:8: ERROR: Expected identifier but found "`r`"
+    at failureErrorWithLog (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:1467:15)
+    at C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:736:50
+    at responseCallbacks.<computed> (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+
+Node.js v24.11.0
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+Error [TransformError]: Transform failed with 1 error:
+C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:535:8: ERROR: Expected identifier but found "`r`"
+    at failureErrorWithLog (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:1467:15)
+    at C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:736:50
+    at responseCallbacks.<computed> (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+
+Node.js v24.11.0
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+Error [TransformError]: Transform failed with 1 error:
+C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:535:8: ERROR: Expected identifier but found "`r`"
+    at failureErrorWithLog (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:1467:15)
+    at C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:736:50
+    at responseCallbacks.<computed> (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+
+Node.js v24.11.0
+[RAW_EXTRACT][rx-mmassdj2-m00fr] OCR vision failed page=1 (45018ms): Request timed out.
+[RAW_EXTRACT][rx-mmastxlu-h2dvo] OCR vision failed page=1 (90026ms): Request timed out.
+[RAW_EXTRACT][rx-mmautmhm-bi99k] Error after 20028ms: Error: RAW extract trace=rx-mmautmhm-bi99k timeout (20s).
+    at Timeout.<anonymous> (C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:94:39)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+[RAW_EXTRACT][rx-mmautmhm-bi99k] OCR vision failed page=1 (45028ms): Request timed out.
+[RAW_EXTRACT][rx-mmautmhm-bi99k] page 1/22 OCR vision returned 0 rows.
+[RAW_EXTRACT][rx-mmauuvox-19pg8] Error after 20018ms: Error: RAW extract trace=rx-mmauuvox-19pg8 timeout (20s).
+    at Timeout.<anonymous> (C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:94:39)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+[RAW_EXTRACT][rx-mmauvb6b-lr7s0] Error after 20013ms: Error: RAW extract trace=rx-mmauvb6b-lr7s0 timeout (20s).
+    at Timeout.<anonymous> (C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:94:39)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+[RAW_EXTRACT][rx-mmauvb6b-lr7s0] OCR vision failed page=2 (45019ms): Request timed out.
+[RAW_EXTRACT][rx-mmauvb6b-lr7s0] page 2/22 OCR vision returned 0 rows.
+[RAW_EXTRACT][rx-mmauw5di-0rc79] Error after 20018ms: Error: RAW extract trace=rx-mmauw5di-0rc79 timeout (20s).
+    at Timeout.<anonymous> (C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:94:39)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+[RAW_EXTRACT][rx-mmauwkuo-a6f15] Error after 20015ms: Error: RAW extract trace=rx-mmauwkuo-a6f15 timeout (20s).
+    at Timeout.<anonymous> (C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:94:39)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+[RAW_EXTRACT][rx-mmaux0bq-3dfyf] Error after 20021ms: Error: RAW extract trace=rx-mmaux0bq-3dfyf timeout (20s).
+    at Timeout.<anonymous> (C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:94:39)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+[RAW_EXTRACT][rx-mmauy53o-9opwo] Error after 20007ms: Error: RAW extract trace=rx-mmauy53o-9opwo timeout (20s).
+    at Timeout.<anonymous> (C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:94:39)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+[RAW_EXTRACT][rx-mmauz6r8-4neoc] Error after 20012ms: Error: RAW extract trace=rx-mmauz6r8-4neoc timeout (20s).
+    at Timeout.<anonymous> (C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:94:39)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+[RAW_EXTRACT][rx-mmav103d-y34r0] Error after 20012ms: Error: RAW extract trace=rx-mmav103d-y34r0 timeout (20s).
+    at Timeout.<anonymous> (C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:94:39)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+[RAW_EXTRACT][rx-mmav1pxz-1563q] Error after 20007ms: Error: RAW extract trace=rx-mmav1pxz-1563q timeout (20s).
+    at Timeout.<anonymous> (C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:94:39)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+[RAW_EXTRACT][rx-mmav25eq-g0vin] Error after 20012ms: Error: RAW extract trace=rx-mmav25eq-g0vin timeout (20s).
+    at Timeout.<anonymous> (C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:94:39)
+    at listOnTimeout (node:internal/timers:608:17)
+    at process.processTimers (node:internal/timers:543:7)
+[RAW_EXTRACT][rx-mmavs1p1-ux0ws] OCR vision failed page=1 (45051ms): Request timed out.
+[RAW_EXTRACT][rx-mmavs1p1-ux0ws] page 1/22 OCR vision returned 0 rows.
+[RAW_EXTRACT][rx-mmavt3jk-r5nj1] OCR vision failed page=2 (45021ms): Request timed out.
+[RAW_EXTRACT][rx-mmavt3jk-r5nj1] page 2/22 OCR vision returned 0 rows.
+[RAW_EXTRACT][rx-mmavud5o-ergfu] OCR vision failed page=4 (45029ms): Request timed out.
+[RAW_EXTRACT][rx-mmavud5o-ergfu] page 4/22 OCR vision returned 0 rows.
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+Error [TransformError]: Transform failed with 1 error:
+C:\REVISATUCUENTASOLOCODEX\server\endpoints\raw-extract.endpoint.ts:240:37: ERROR: Unterminated string literal
+    at failureErrorWithLog (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:1467:15)
+    at C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:736:50
+    at responseCallbacks.<computed> (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (C:\REVISATUCUENTASOLOCODEX\node_modules\tsx\node_modules\esbuild\lib\main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+
+Node.js v24.11.0
+[RAW_EXTRACT][rx-mmaxrqlu-22fud] OCR vision failed page=1 (45039ms): Request timed out.
+[RAW_EXTRACT][rx-mmaxrqlu-22fud] page 1/22 OCR vision returned 0 rows.
+[RAW_EXTRACT][rx-mmaxssna-xvqdd] OCR vision failed page=2 (45031ms): Request timed out.
+[RAW_EXTRACT][rx-mmaxssna-xvqdd] page 2/22 OCR vision returned 0 rows.
+[RAW_EXTRACT][rx-mmaxucdo-hf65u] OCR vision failed page=4 (45021ms): Request timed out.
+[RAW_EXTRACT][rx-mmaxucdo-hf65u] page 4/22 OCR vision returned 0 rows.
+[RAW_EXTRACT][rx-mmazhxw2-mnid0] OCR vision failed page=2 (45027ms): Request timed out.
+[RAW_EXTRACT][rx-mmazhxw2-mnid0] page 2/22 OCR vision returned 0 rows.
+[RAW_EXTRACT][rx-mmaznijm-928mv] OCR vision failed page=4 (45025ms): Request timed out.
+[RAW_EXTRACT][rx-mmaznijm-928mv] page 4/22 OCR vision returned 0 rows.

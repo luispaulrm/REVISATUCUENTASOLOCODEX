@@ -1,24 +1,21 @@
 import React, { useState } from 'react';
-import App from '../App';
 import PAMApp from './PAMApp';
 import ContractApp from './ContractApp';
 import ForensicApp from './ForensicApp';
 import PdfProjector from './PdfProjector';
+import PdfViewerDemo from './PdfViewerDemo';
 
 import AuditorM10App from './AuditorM10App';
 import AuditorM11App from './AuditorM11App';
 import AuditorM12App from './AuditorM12App';
 import CanonicalGeneratorApp from './CanonicalGeneratorApp';
-import MentalMapApp from './MentalMapApp';
-import { ShieldCheck, Receipt, Scale, Gavel, Eye, FileSpreadsheet, Zap, FileJson, Brain, ListChecks } from 'lucide-react';
+import { ShieldCheck, Scale, Gavel, Eye, FileJson, Brain, Receipt } from 'lucide-react';
 
-type DocumentType = 'bill' | 'pam' | 'contract' | 'audit' | 'view' | 'm7' | 'canonizar' | 'mapa' | 'm10' | 'm11' | 'm12';
+type DocumentType = 'bill' | 'pam' | 'contract' | 'audit' | 'view' | 'canonizar' | 'm10' | 'm11' | 'm12';
 
 export function AppWithTabs() {
     const [activeTab, setActiveTab] = useState<DocumentType>('bill');
 
-    // Clear active session data on refresh (mount) to ensure a clean state
-    // as requested by the user. Historical data remains in cacheManager.
     React.useEffect(() => {
         localStorage.removeItem('forensic_active_case_id');
         localStorage.removeItem('clinic_audit_result');
@@ -29,7 +26,7 @@ export function AppWithTabs() {
         localStorage.removeItem('pam_audit_file_fingerprint');
         localStorage.removeItem('contract_audit_file_fingerprint');
 
-        console.log('[System] ℹ️ Sesión activa resetada para inicio limpio. Historial preservado en Memoria Forense.');
+        console.log('[System] Session activa reseteada para inicio limpio. Historial preservado en Memoria Forense.');
     }, []);
 
     const handleTabChange = (tab: DocumentType) => {
@@ -38,9 +35,8 @@ export function AppWithTabs() {
 
     return (
         <div className="min-h-screen bg-white text-slate-900 selection:bg-indigo-100 selection:text-indigo-900">
-            {/* Tab Navigation */}
             <div className="sticky top-0 z-[100] bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
-                <div className="max-w-[1800px] mx-auto px-6 h-16 flex items-center justify-between">
+                <div className="w-full px-4 xl:px-6 h-16 flex items-center justify-between">
                     <div className="flex bg-slate-100 p-1 rounded-xl border border-slate-200">
                         <button
                             onClick={() => handleTabChange('bill')}
@@ -50,7 +46,7 @@ export function AppWithTabs() {
                                 }`}
                         >
                             <Receipt size={16} />
-                            Cuentas Clínicas
+                            Cuentas Clinicas
                         </button>
 
                         <button
@@ -83,7 +79,7 @@ export function AppWithTabs() {
                                 }`}
                         >
                             <Gavel size={16} />
-                            Auditoría Forense
+                            Auditoria Forense
                         </button>
 
                         <button
@@ -97,7 +93,6 @@ export function AppWithTabs() {
                             Contrato Proyector
                         </button>
 
-
                         <button
                             onClick={() => handleTabChange('canonizar')}
                             className={`flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-all duration-300 ${activeTab === 'canonizar'
@@ -106,7 +101,7 @@ export function AppWithTabs() {
                                 }`}
                         >
                             <FileJson size={16} />
-                            JSON Canónico
+                            JSON Canonico
                         </button>
 
                         <button
@@ -139,17 +134,15 @@ export function AppWithTabs() {
                                 }`}
                         >
                             <Brain size={16} />
-                            M12 Auditor
+                            M12 Contrato
                         </button>
-
                     </div>
                 </div>
             </div>
 
-            {/* Content */}
             <div>
                 <div style={{ display: activeTab === 'bill' ? 'block' : 'none' }}>
-                    <App />
+                    <PdfViewerDemo />
                 </div>
                 <div style={{ display: activeTab === 'pam' ? 'block' : 'none' }}>
                     <PAMApp />
@@ -179,7 +172,6 @@ export function AppWithTabs() {
                 <div style={{ display: activeTab === 'm12' ? 'block' : 'none' }}>
                     <AuditorM12App />
                 </div>
-
             </div>
         </div>
     );

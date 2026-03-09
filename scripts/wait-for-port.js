@@ -2,6 +2,7 @@ import net from 'net';
 import process from 'process';
 
 const port = parseInt(process.argv[2] || '5000', 10);
+const host = process.argv[3] || '127.0.0.1';
 const timeout = 300000; // 300 seconds (5 minutes)
 const start = Date.now();
 
@@ -25,7 +26,7 @@ function checkPort() {
         retry();
     });
 
-    socket.connect(port, 'localhost');
+    socket.connect(port, host);
 }
 
 function retry() {

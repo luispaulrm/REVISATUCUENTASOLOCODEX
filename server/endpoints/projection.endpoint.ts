@@ -7,14 +7,14 @@ function envGet(k: string) {
     return typeof v === "string" ? v : undefined;
 }
 
-// Helper to get all API keys
+// Helper to get OpenAI API keys
 const getApiKeys = () => {
     const keys = [];
-    if (envGet("GEMINI_API_KEY")) keys.push(envGet("GEMINI_API_KEY"));
-    if (envGet("API_KEY")) keys.push(envGet("API_KEY"));
-    if (envGet("GEMINI_API_KEY_SECONDARY")) keys.push(envGet("GEMINI_API_KEY_SECONDARY"));
-    if (envGet("GEMINI_API_KEY_TERTIARY")) keys.push(envGet("GEMINI_API_KEY_TERTIARY"));
-    if (envGet("GEMINI_API_KEY_QUATERNARY")) keys.push(envGet("GEMINI_API_KEY_QUATERNARY"));
+    if (envGet("OPENAI_API_KEY")) keys.push(envGet("OPENAI_API_KEY"));
+    if (envGet("OPENAI_API_KEY_SECONDARY")) keys.push(envGet("OPENAI_API_KEY_SECONDARY"));
+    if (envGet("OPENAI_API_KEY_TERTIARY")) keys.push(envGet("OPENAI_API_KEY_TERTIARY"));
+    // Backward-compat fallback only if it is an OpenAI key
+    if (envGet("API_KEY")?.startsWith("sk-")) keys.push(envGet("API_KEY"));
     // Deduplicate
     return [...new Set(keys)].filter(k => !!k);
 };

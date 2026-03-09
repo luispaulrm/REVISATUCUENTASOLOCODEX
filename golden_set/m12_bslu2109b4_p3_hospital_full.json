@@ -1,0 +1,1023 @@
+{
+  "section": "HOSPITALARIAS Y CIRUGIA MAYOR AMBULATORIA",
+  "oferta_preferente": {
+    "Día Cama": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Sala Cuna": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Incubadora": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Día Cama Cuidado Intensivo, Intermedio o Coronario": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Día Cama Transitorio u Observación": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Exámenes de Laboratorio": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Imagenología": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Derecho Pabellón": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Kinesiología, Fisioterapia y Terapia Ocupacional": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Procedimientos": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Honorarios Médicos Quirúrgicos (1.2)": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Medicamentos (1.4) (1.10)": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Materiales e Insumos Clínicos (1.4) (1.10)": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Quimioterapia (1.6)": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Prótesis, Órtesis y Elementos de Osteosíntesis": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Visita por Médico Tratante y Médico Interconsultor": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ],
+    "Traslados (5.4)": [
+      {
+        "bonificacion_pct": 100,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Davila",
+          "Clinica Vespucio"
+        ],
+        "restricciones": []
+      },
+      {
+        "bonificacion_pct": 90,
+        "tope_evento": "SIN_TOPE_ITEM",
+        "clinicas": [
+          "Clinica Santa Maria",
+          "Hospital UC",
+          "Clinica UC",
+          "Clinica Indisa"
+        ],
+        "restricciones": [
+          "Solo con Medicos Staff",
+          "Solo con bonos"
+        ]
+      }
+    ]
+  },
+  "libre_eleccion": {
+    "Día Cama": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 5,
+        "unidad": "UF",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            664.035975,
+            523.6893,
+            675.3641
+          ],
+          "anchor_y": 670.1131
+        }
+      },
+      "tope_anual": {
+        "estado": "SIN_TOPE_ITEM",
+        "source": "column_level",
+        "confidence": 0.7,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            492.5,
+            563.6893,
+            680.5875
+          ],
+          "anchor_y": null
+        }
+      }
+    },
+    "Sala Cuna": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 2.2,
+        "unidad": "UF",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            653.7069749999999,
+            523.6893,
+            664.035975
+          ],
+          "anchor_y": 659.1116
+        }
+      },
+      "tope_anual": {
+        "estado": "SIN_TOPE_ITEM",
+        "source": "column_level",
+        "confidence": 0.7,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            492.5,
+            563.6893,
+            680.5875
+          ],
+          "anchor_y": null
+        }
+      }
+    },
+    "Incubadora": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 4.8,
+        "unidad": "UF",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            643.7045999999999,
+            523.6893,
+            653.7069749999999
+          ],
+          "anchor_y": 649.1085999999999
+        }
+      },
+      "tope_anual": {
+        "estado": "SIN_TOPE_ITEM",
+        "source": "merged_segment",
+        "confidence": 0.85,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            643.7045999999999,
+            563.6893,
+            653.7069749999999
+          ],
+          "anchor_y": 612.9791
+        }
+      }
+    },
+    "Día Cama Cuidado Intensivo, Intermedio o Coronario": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 11.4,
+        "unidad": "UF",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            633.5790999999999,
+            523.6893,
+            643.7045999999999
+          ],
+          "anchor_y": 639.1055999999999
+        }
+      },
+      "tope_anual": {
+        "estado": "SIN_TOPE_ITEM",
+        "source": "merged_segment",
+        "confidence": 0.85,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            633.5790999999999,
+            563.6893,
+            643.7045999999999
+          ],
+          "anchor_y": 612.9791
+        }
+      }
+    },
+    "Día Cama Transitorio u Observación": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 4.8,
+        "unidad": "UF",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            622.8778499999999,
+            523.6893,
+            633.5790999999999
+          ],
+          "anchor_y": 629.1095999999999
+        }
+      },
+      "tope_anual": {
+        "estado": "SIN_TOPE_ITEM",
+        "source": "merged_segment",
+        "confidence": 0.85,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            622.8778499999999,
+            563.6893,
+            633.5790999999999
+          ],
+          "anchor_y": 612.9791
+        }
+      }
+    },
+    "Exámenes de Laboratorio": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 6,
+        "unidad": "VA",
+        "source": "merged_segment",
+        "confidence": 0.9,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            612.2991,
+            523.6893,
+            622.8778499999999
+          ],
+          "anchor_y": 591.7995999999999
+        }
+      },
+      "tope_anual": {
+        "estado": "SIN_TOPE_ITEM",
+        "source": "merged_segment",
+        "confidence": 0.85,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            612.2991,
+            563.6893,
+            622.8778499999999
+          ],
+          "anchor_y": 612.9791
+        }
+      }
+    },
+    "Imagenología": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 6,
+        "unidad": "VA",
+        "source": "merged_segment",
+        "confidence": 0.9,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            602.2961,
+            523.6893,
+            612.2991
+          ],
+          "anchor_y": 591.7995999999999
+        }
+      },
+      "tope_anual": {
+        "estado": "SIN_TOPE_ITEM",
+        "source": "merged_segment",
+        "confidence": 0.85,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            602.2961,
+            563.6893,
+            612.2991
+          ],
+          "anchor_y": 612.9791
+        }
+      }
+    },
+    "Derecho Pabellón": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 6,
+        "unidad": "VA",
+        "source": "merged_segment",
+        "confidence": 0.9,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            591.7635375,
+            523.6893,
+            602.2961
+          ],
+          "anchor_y": 591.7995999999999
+        }
+      },
+      "tope_anual": {
+        "estado": "SIN_TOPE_ITEM",
+        "source": "merged_segment",
+        "confidence": 0.85,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            591.7635375,
+            563.6893,
+            602.2961
+          ],
+          "anchor_y": 612.9791
+        }
+      }
+    },
+    "Kinesiología, Fisioterapia y Terapia Ocupacional": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 6,
+        "unidad": "VA",
+        "source": "merged_segment",
+        "confidence": 0.9,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            581.7605374999999,
+            523.6893,
+            591.7635375
+          ],
+          "anchor_y": 591.7995999999999
+        }
+      },
+      "tope_anual": {
+        "estado": "SIN_TOPE_ITEM",
+        "source": "merged_segment",
+        "confidence": 0.85,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            581.7605374999999,
+            563.6893,
+            591.7635375
+          ],
+          "anchor_y": 612.9791
+        }
+      }
+    },
+    "Procedimientos": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 6,
+        "unidad": "VA",
+        "source": "merged_segment",
+        "confidence": 0.9,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            572.2870999999998,
+            523.6893,
+            581.7605374999999
+          ],
+          "anchor_y": 591.7995999999999
+        }
+      },
+      "tope_anual": {
+        "estado": "CON_TOPE",
+        "valor": 56,
+        "unidad": "UF",
+        "source": "merged_segment",
+        "confidence": 0.85,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            572.2870999999998,
+            563.6893,
+            581.7605374999999
+          ],
+          "anchor_y": 547.7345999999998
+        }
+      }
+    },
+    "Honorarios Médicos Quirúrgicos (1.2)": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 40,
+        "unidad": "UF",
+        "source": "merged_segment",
+        "confidence": 0.85,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            562.3978499999998,
+            523.6893,
+            572.2870999999998
+          ],
+          "anchor_y": 557.7375999999998
+        }
+      },
+      "tope_anual": {
+        "estado": "CON_TOPE",
+        "valor": 56,
+        "unidad": "UF",
+        "source": "merged_segment",
+        "confidence": 0.85,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            562.3978499999998,
+            563.6893,
+            572.2870999999998
+          ],
+          "anchor_y": 547.7345999999998
+        }
+      }
+    },
+    "Medicamentos (1.4) (1.10)": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 40,
+        "unidad": "UF",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            552.6048499999997,
+            523.6893,
+            562.3978499999998
+          ],
+          "anchor_y": 557.7375999999998
+        }
+      },
+      "tope_anual": {
+        "estado": "CON_TOPE",
+        "valor": 56,
+        "unidad": "UF",
+        "source": "merged_segment",
+        "confidence": 0.85,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            552.6048499999997,
+            563.6893,
+            562.3978499999998
+          ],
+          "anchor_y": 547.7345999999998
+        }
+      }
+    },
+    "Materiales e Insumos Clínicos (1.4) (1.10)": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 28,
+        "unidad": "UF",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            542.7564333333331,
+            523.6893,
+            552.6048499999997
+          ],
+          "anchor_y": 548.0845999999998
+        }
+      },
+      "tope_anual": {
+        "estado": "CON_TOPE",
+        "valor": 56,
+        "unidad": "UF",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            542.7564333333331,
+            563.6893,
+            552.6048499999997
+          ],
+          "anchor_y": 547.7345999999998
+        }
+      }
+    },
+    "Quimioterapia (1.6)": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 18,
+        "unidad": "UF",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            532.8117666666665,
+            523.6893,
+            542.7564333333331
+          ],
+          "anchor_y": 538.0815999999998
+        }
+      },
+      "tope_anual": {
+        "estado": "CON_TOPE",
+        "valor": 180,
+        "unidad": "UF",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            532.8117666666665,
+            563.6893,
+            542.7564333333331
+          ],
+          "anchor_y": 538.0815999999998
+        }
+      }
+    },
+    "Prótesis, Órtesis y Elementos de Osteosíntesis": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 14,
+        "unidad": "UF",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            522.6790999999998,
+            523.6893,
+            532.8117666666665
+          ],
+          "anchor_y": 528.0785999999997
+        }
+      },
+      "tope_anual": {
+        "estado": "CON_TOPE",
+        "valor": 28,
+        "unidad": "UF",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            522.6790999999998,
+            563.6893,
+            532.8117666666665
+          ],
+          "anchor_y": 528.0785999999997
+        }
+      }
+    },
+    "Visita por Médico Tratante y Médico Interconsultor": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 0.48,
+        "unidad": "UF",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            512.8719333333332,
+            523.6893,
+            522.6790999999998
+          ],
+          "anchor_y": 518.0755999999997
+        }
+      },
+      "tope_anual": {
+        "estado": "SIN_TOPE_ITEM",
+        "source": "merged_segment",
+        "confidence": 0.85,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            512.8719333333332,
+            563.6893,
+            522.6790999999998
+          ],
+          "anchor_y": 511.0895999999997
+        }
+      }
+    },
+    "Traslados (5.4)": {
+      "bonificacion_pct": 90,
+      "tope_evento": {
+        "valor": 1.8,
+        "unidad": "UF",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_EVENTO",
+          "bbox": [
+            496.14629999999994,
+            502.19593333333324,
+            523.6893,
+            512.8719333333332
+          ],
+          "anchor_y": 507.7225999999997
+        }
+      },
+      "tope_anual": {
+        "estado": "SIN_TOPE_ITEM",
+        "source": "direct",
+        "confidence": 1,
+        "evidence": {
+          "column_id": "LE_TOPE_ANUAL",
+          "bbox": [
+            523.6893,
+            502.19593333333324,
+            563.6893,
+            512.8719333333332
+          ],
+          "anchor_y": 511.0895999999997
+        }
+      }
+    }
+  },
+  "warnings": []
+}

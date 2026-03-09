@@ -1,0 +1,6 @@
+[pdf-layout:post] Error: HttpError: No se pudo obtener layout OpenAI (file_call=429 Rate limit reached for gpt-4o-mini in organization org-yceHPDasQqtGxg6Xmx1nRI2w on tokens per min (TPM): Limit 200000, Used 200000, Requested 16830. Please try again in 5.049s. Visit https://platform.openai.com/account/rate-limits to learn more.; image_call=429 Rate limit reached for gpt-4o-mini in organization org-yceHPDasQqtGxg6Xmx1nRI2w on tokens per min (TPM): Limit 200000, Used 200000, Requested 765. Please try again in 229ms. Visit https://platform.openai.com/account/rate-limits to learn more.).
+    at inferLayoutFromPdfBuffer (C:\REVISATUCUENTASOLOCODEX\server\endpoints\pdf-layout.endpoint.ts:341:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async handlePdfLayoutPost (C:\REVISATUCUENTASOLOCODEX\server\endpoints\pdf-layout.endpoint.ts:402:20) {
+  status: 429
+}

@@ -5,6 +5,56 @@ import { runSkill } from '../m11/engine';
 import { SkillInput, SkillOutput, CanonicalContractRule, ContractDomain } from '../m11/types';
 import ChatBox from './ChatBox';
 
+const M12_CONTRACT_KEY = 'm12_audit_result';
+type StoredContractSource = 'm12' | 'canonical' | 'legacy' | 'none';
+
+function hasUsableContractPayload(obj: any): boolean {
+    if (!obj || typeof obj !== 'object') return false;
+    return Boolean(
+        (Array.isArray(obj.sections) && obj.sections.length > 0) ||
+        (Array.isArray(obj.items) && obj.items.length > 0) ||
+        (Array.isArray(obj.rules) && obj.rules.length > 0) ||
+        (Array.isArray(obj.coberturas) && obj.coberturas.length > 0) ||
+        obj.page3_sections ||
+        obj.oferta_preferente ||
+        obj.libre_eleccion
+    );
+}
+
+function getStoredContractSource(): { data: any; source: StoredContractSource } {
+    try {
+        const m12Raw = localStorage.getItem(M12_CONTRACT_KEY);
+        if (m12Raw) {
+            const parsed = JSON.parse(m12Raw);
+            if (hasUsableContractPayload(parsed)) {
+                return { data: parsed, source: 'm12' };
+            }
+        }
+    } catch { }
+
+    try {
+        const canonicalRaw = localStorage.getItem('canonical_contract_result');
+        if (canonicalRaw) {
+            const parsed = JSON.parse(canonicalRaw);
+            if (hasUsableContractPayload(parsed)) {
+                return { data: parsed, source: 'canonical' };
+            }
+        }
+    } catch { }
+
+    try {
+        const legacyRaw = localStorage.getItem('contract_audit_result');
+        if (legacyRaw) {
+            const parsed = JSON.parse(legacyRaw);
+            if (hasUsableContractPayload(parsed)) {
+                return { data: parsed, source: 'legacy' };
+            }
+        }
+    } catch { }
+
+    return { data: {}, source: 'none' };
+}
+
 export default function AuditorM11App() {
     const [dataStatus, setDataStatus] = useState({
         canonical: false,
@@ -18,12 +68,12 @@ export default function AuditorM11App() {
 
     useEffect(() => {
         const checkData = () => {
-            const canonical = localStorage.getItem('canonical_contract_result');
+            const contract = getStoredContractSource();
             const pam = localStorage.getItem('pam_audit_result');
             const account = localStorage.getItem('clinic_audit_result');
 
             setDataStatus({
-                canonical: !!canonical,
+                canonical: contract.source !== 'none',
                 pam: !!pam,
                 account: !!account
             });
@@ -37,21 +87,21 @@ export default function AuditorM11App() {
     const handleRunAudit = async () => {
         setIsProcessing(true);
         try {
-            const canonicalStr = localStorage.getItem('canonical_contract_result');
+            const { data: rawContract, source: contractSource } = getStoredContractSource();
             const pamStr = localStorage.getItem('pam_audit_result');
             const accountStr = localStorage.getItem('clinic_audit_result');
 
-            if (!canonicalStr || !pamStr || !accountStr) {
-                alert('Faltan datos para ejecutar la auditoría.');
+            if (contractSource === 'none' || !pamStr || !accountStr) {
+                alert('Faltan datos para ejecutar la auditoría (Contrato M12/Canónico, PAM y Cuenta).');
                 setIsProcessing(false);
                 return;
             }
 
-            const rawContract = JSON.parse(canonicalStr);
             const rawPam = JSON.parse(pamStr);
             const rawBill = JSON.parse(accountStr);
 
             const input = adaptToM11Input(rawContract, rawPam, rawBill);
+            console.log(`[M11] Fuente contractual activa: ${contractSource.toUpperCase()}`);
 
             // Pre-resolve UF value for M5 tope calculations
             const ufResult = await resolveUFValueCLP();
@@ -70,6 +120,7 @@ export default function AuditorM11App() {
             // DIAGNOSTIC: warn if rules=0 but there were coberturas (mapping bug vs missing contract)
             const rawCoberturasCount = Array.isArray(rawContract.coberturas) ? rawContract.coberturas.length
                 : Array.isArray(rawContract.rules) ? rawContract.rules.length
+                    : Array.isArray(rawContract.sections) ? rawContract.sections.reduce((acc: number, s: any) => acc + (s?.items?.length || 0), 0)
                     : 0;
 
             if (input.pam.folios.length === 0 || input.bill.items.length === 0) {
@@ -223,6 +274,7 @@ export default function AuditorM11App() {
 
             // 2. Clear LocalStorage Logic
             localStorage.removeItem('canonical_contract_result');
+            localStorage.removeItem(M12_CONTRACT_KEY);
             localStorage.removeItem('pam_audit_result');
             localStorage.removeItem('clinic_audit_result');
             localStorage.removeItem('audit_m10_demo_mode'); // If any
@@ -321,7 +373,7 @@ export default function AuditorM11App() {
                                 <div className="space-y-4">
                                     {[
                                         {
-                                            title: 'Contrato Canónico',
+                                            title: 'Contrato (M12/Canónico)',
                                             check: dataStatus.canonical,
                                             desc: 'Habilita validación de Topes (M5-T) y Coberturas Contractuales.'
                                         },
@@ -677,7 +729,7 @@ export default function AuditorM11App() {
                                 contextData={{
                                     result: auditResult,
                                     contract: adaptedInputRef.current?.contract,
-                                    rawContract: JSON.parse(localStorage.getItem('canonical_contract_result') || '{}'),
+                                    rawContract: getStoredContractSource().data,
                                     pam: adaptedInputRef.current?.pam || JSON.parse(localStorage.getItem('pam_audit_result') || '{}'),
                                     bill: adaptedInputRef.current?.bill || JSON.parse(localStorage.getItem('clinic_audit_result') || '{}')
                                 }}
@@ -778,13 +830,142 @@ function adaptToM11Input(rawContract: any, rawPam: any, rawBill: any): SkillInpu
     // Try to find the array of rules/coverages
     // v2.3: Combine multiple possible sources within the canonical JSON
 
+    const parsePct = (raw: any): number | null => {
+        if (typeof raw === 'number' && Number.isFinite(raw)) return raw;
+        if (raw && typeof raw === 'object' && typeof raw.valor === 'number' && Number.isFinite(raw.valor)) return raw.valor;
+        if (typeof raw === 'string') {
+            const n = Number(raw.replace(/[^\d.,-]/g, '').replace(',', '.'));
+            return Number.isFinite(n) ? n : null;
+        }
+        return null;
+    };
+
+    const toM12Tope = (raw: any) => {
+        if (!raw) return { estado: 'UNKNOWN', valor: null, unidad: 'UNKNOWN' };
+        if (typeof raw === 'string') {
+            const token = raw.toUpperCase();
+            if (token.includes('SIN_TOPE')) return { estado: 'SIN_TOPE_ITEM', valor: null, unidad: 'SIN_TOPE' };
+            return { estado: 'UNKNOWN', valor: null, unidad: 'UNKNOWN' };
+        }
+        const estado = String(raw.estado || ((raw.valor ?? null) === null ? 'UNKNOWN' : 'CON_TOPE'));
+        const unidad = String(raw.unidad || 'UNKNOWN');
+        const valor = typeof raw.valor === 'number' && Number.isFinite(raw.valor) ? raw.valor : null;
+        return { estado, valor, unidad };
+    };
+
+    const mapM12SectionToAmbito = (sectionName: string) => {
+        const s = normalizeStr(sectionName).toUpperCase();
+        if (s.includes('HOSPITALARIAS')) return 'HOSPITALARIO';
+        if (s.includes('AMBULATORIAS')) return 'AMBULATORIO';
+        if (s.includes('URGENCIA')) return 'URGENCIA';
+        return 'OTROS';
+    };
+
+    // M12 structured output: sections -> items -> rules
+    const isM12Structured = Array.isArray(contractSource.sections)
+        && contractSource.sections.length > 0
+        && Array.isArray(contractSource.sections[0]?.items)
+        && Array.isArray(contractSource.sections[0]?.items?.[0]?.rules);
+
+    if (isM12Structured) {
+        console.log(`[M11 ADAPTER] Detected M12 structured format with ${contractSource.sections.length} sections.`);
+        sourceArray = contractSource.sections.flatMap((section: any) =>
+            (section.items || []).flatMap((it: any) =>
+                (it.rules || []).map((r: any, idx: number) => ({
+                    id: `${it.item || 'ITEM'}_${String(r.modality || '').toLowerCase()}_${idx}`,
+                    item: it.item,
+                    ambito: it.ambito || section.section || 'OTROS',
+                    porcentaje: r.porcentaje,
+                    tope_evento_obj: r.tope_evento,
+                    tope_anual_obj: r.tope_anual,
+                    copago_fijo: r.copago_fijo,
+                    tipo_modalidad: String(r.modality || '').toUpperCase().includes('LIBRE') ? 'libre_eleccion' : 'preferente',
+                    subred_id: r.subred_id,
+                    condiciones: r.condiciones || [],
+                    categoria: it.ambito || section.section || 'OTROS',
+                    clinicas: r.clinicas || [],
+                    descripcion_textual: it.item,
+                    _isM12: true
+                }))
+            )
+        );
+    }
+
+    // M12 visual output: oferta_preferente/libre_eleccion (+ optional page3_sections)
+    if (
+        sourceArray.length === 0 &&
+        (contractSource.page3_sections || contractSource.oferta_preferente || contractSource.libre_eleccion)
+    ) {
+        console.log('[M11 ADAPTER] Detected M12 visual grid format.');
+        const visualSections: any[] = [];
+        if (contractSource.page3_sections) {
+            const p3 = contractSource.page3_sections;
+            if (p3.hospitalarias) visualSections.push({ key: 'HOSPITALARIAS', data: p3.hospitalarias });
+            if (p3.ambulatorias) visualSections.push({ key: 'AMBULATORIAS', data: p3.ambulatorias });
+            if (p3.atenciones_urgencia) visualSections.push({ key: 'ATENCIONES_DE_URGENCIA', data: p3.atenciones_urgencia });
+            if (p3.prestaciones_restringidas) visualSections.push({ key: 'PRESTACIONES_RESTRINGIDAS', data: p3.prestaciones_restringidas });
+            if (p3.otras_prestaciones) visualSections.push({ key: 'OTRAS_PRESTACIONES', data: p3.otras_prestaciones });
+        } else {
+            visualSections.push({ key: contractSource.section || 'HOSPITALARIAS', data: contractSource });
+        }
+
+        for (const sec of visualSections) {
+            const secData = sec.data || {};
+            const ambito = mapM12SectionToAmbito(sec.key || secData.section || '');
+            const oferta = secData.oferta_preferente || {};
+            const libre = secData.libre_eleccion || {};
+            const itemNames = Array.from(new Set([...Object.keys(oferta), ...Object.keys(libre)]));
+
+            for (const itemName of itemNames) {
+                const prefRules = Array.isArray(oferta[itemName]) ? oferta[itemName] : [];
+                for (let i = 0; i < prefRules.length; i++) {
+                    const r = prefRules[i] || {};
+                    sourceArray.push({
+                        id: `${itemName}_pref_${i}`,
+                        item: itemName,
+                        ambito,
+                        porcentaje: parsePct(r.bonificacion_pct),
+                        tope_evento_obj: toM12Tope(r.tope_evento),
+                        tope_anual_obj: toM12Tope('SIN_TOPE_ITEM'),
+                        tipo_modalidad: 'preferente',
+                        subred_id: r.subred_id || 'PREF_TIER_1',
+                        condiciones: r.restricciones || r.condiciones || [],
+                        categoria: ambito,
+                        clinicas: r.clinicas || r.prestadores || [],
+                        descripcion_textual: itemName,
+                        _isM12: true
+                    });
+                }
+
+                const le = libre[itemName];
+                if (le) {
+                    sourceArray.push({
+                        id: `${itemName}_libre_0`,
+                        item: itemName,
+                        ambito,
+                        porcentaje: parsePct(le.bonificacion_pct),
+                        tope_evento_obj: toM12Tope(le.tope_evento),
+                        tope_anual_obj: toM12Tope(le.tope_anual),
+                        tipo_modalidad: 'libre_eleccion',
+                        subred_id: 'LIBRE_ELECCION',
+                        condiciones: [],
+                        categoria: ambito,
+                        clinicas: [],
+                        descripcion_textual: itemName,
+                        _isM12: true
+                    });
+                }
+            }
+        }
+    }
+
     // v2.4: DETECT AUDITOR B FORMAT NATIVELY
     // AuditorB produces: { items: [{ ambito, item, preferente: { rules: [...] }, libre_eleccion: { rules: [...] } }] }
     const isAuditorB = contractSource.items && Array.isArray(contractSource.items)
         && contractSource.items.length > 0
         && contractSource.items[0]?.preferente?.rules !== undefined;
 
-    if (isAuditorB) {
+    if (sourceArray.length === 0 && isAuditorB) {
         console.log(`[M11 ADAPTER] 🔍 Detected AuditorB format with ${contractSource.items.length} items.`);
         sourceArray = contractSource.items.flatMap((bItem: any) => {
             const results: any[] = [];
@@ -828,11 +1009,11 @@ function adaptToM11Input(rawContract: any, rawPam: any, rawBill: any): SkillInpu
             });
             return results;
         });
-    } else if (Array.isArray(contractSource)) {
+    } else if (sourceArray.length === 0 && Array.isArray(contractSource)) {
         sourceArray = contractSource;
-    } else if (contractSource.rules && Array.isArray(contractSource.rules)) {
+    } else if (sourceArray.length === 0 && contractSource.rules && Array.isArray(contractSource.rules)) {
         sourceArray = contractSource.rules;
-    } else {
+    } else if (sourceArray.length === 0) {
         // Collect from all standard canonical buckets
         if (contractSource.coberturas && Array.isArray(contractSource.coberturas)) {
             sourceArray = [...sourceArray, ...contractSource.coberturas];
@@ -887,7 +1068,7 @@ function adaptToM11Input(rawContract: any, rawPam: any, rawBill: any): SkillInpu
     rules = sourceArray.map((c: any) => {
         // v2.4: AuditorB items have a direct ambito field → use mapAmbitoToDomain
         let domain: ContractDomain;
-        if (c._isAuditorB && c.ambito) {
+        if ((c._isAuditorB || c._isM12) && c.ambito) {
             domain = mapAmbitoToDomain(c.ambito);
         } else {
             // Legacy: Use ALL available text fields for domain detection
@@ -902,7 +1083,7 @@ function adaptToM11Input(rawContract: any, rawPam: any, rawBill: any): SkillInpu
         // Parse tope value: structured objects (AuditorB) or string parsing (legacy)
         let parsedTope: { kind: "UF" | "UTM" | "CLP" | "VAM" | "AC2" | "SIN_TOPE_EXPRESO" | "VARIABLE"; value: number | null };
 
-        if (c._isAuditorB && c.tope_evento_obj) {
+        if ((c._isAuditorB || c._isM12) && c.tope_evento_obj) {
             // Direct structured tope from AuditorB (v1.3)
             const te = c.tope_evento_obj;
             const kindMap: Record<string, typeof parsedTope.kind> = {
@@ -946,7 +1127,7 @@ function adaptToM11Input(rawContract: any, rawPam: any, rawBill: any): SkillInpu
             tope: {
                 kind: parsedTope.kind,
                 value: parsedTope.value,
-                currency: c._isAuditorB ? `${parsedTope.value ?? ''} ${parsedTope.kind}` : (c.tope || undefined),
+                currency: (c._isAuditorB || c._isM12) ? `${parsedTope.value ?? ''} ${parsedTope.kind}` : (c.tope || undefined),
             },
             textLiteral: `${c.item || ''} ${c.descripcion_textual || ''}${clinicStr}${condStr}`.trim()
         };

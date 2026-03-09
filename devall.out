@@ -1,0 +1,27 @@
+
+> clinicbill-audit-extractor@0.0.0 dev:all
+> node scripts/update-version.js && concurrently --names "BACK,FRONT" --prefix-colors "cyan,magenta" --kill-others --kill-others-on-fail "npm run server" "npm run dev"
+
+✅ Version updated to v1.18.589 at 28/02/2026 10:34 (Chile)
+ℹ️ Git auto-push is disabled. Please commit and push manually.
+[BACK] 
+[BACK] > clinicbill-audit-extractor@0.0.0 server
+[BACK] > tsx watch server/server.ts
+[BACK] 
+[FRONT] 
+[FRONT] > clinicbill-audit-extractor@0.0.0 dev
+[FRONT] > vite
+[FRONT] 
+[FRONT] 
+[FRONT]   [32m[1mVITE[22m v6.4.1[39m  [2mready in [0m[1m404[22m[2m[0m ms[22m
+[FRONT] 
+[FRONT]   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3000[22m/[39m
+[FRONT]   [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.0.23:[1m3000[22m/[39m
+[FRONT] [2m10:34:42 a. m.[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/contract-count[39m
+[FRONT] Error: connect ECONNREFUSED 127.0.0.1:5000
+[FRONT]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)
+[FRONT] [2m10:35:08 a. m.[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdevall.out[22m
+[FRONT] [2m10:35:08 a. m.[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mdevall.out[22m
+[FRONT] [2m10:35:10 a. m.[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/contract-count[39m
+[FRONT] Error: connect ECONNREFUSED 127.0.0.1:5000
+[FRONT]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16)

@@ -1,0 +1,1798 @@
+
+> clinicbill-audit-extractor@0.0.0 server:watch
+> tsx watch server/server.ts
+
+✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+11:51:18 a. m. [tsx] change in ./server\server.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+12:03:18 p. m. [tsx] change in ./server\server.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+12:03:30 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+12:30:54 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+12:53:40 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+12:54:25 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+12:55:12 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c12:55:23 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Rerunning...
+c12:55:40 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Rerunning...
+c12:55:51 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Rerunning...
+c12:56:03 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Rerunning...
+c12:56:20 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Rerunning...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+[RAW_EXTRACT][rx-mmassdj2-m00fr] start page=1 maxPages=1 bytes=4021524
+[RAW_EXTRACT][rx-mmassdj2-m00fr] page 1/22 nativeCells=0
+[RAW_EXTRACT][rx-mmassdj2-m00fr] page 1/22 rows=0 cells=0 (45411ms)
+[RAW_EXTRACT][rx-mmassdj2-m00fr] done sections=0 items=0 (46113ms)
+1:04:55 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+[RAW_EXTRACT][rx-mmastxlu-h2dvo] start page=1 maxPages=1 bytes=4021524
+[RAW_EXTRACT][rx-mmastxlu-h2dvo] page 1/22 nativeCells=0
+[RAW_EXTRACT][rx-mmastxlu-h2dvo] page 1/22 rows=0 cells=0 (90325ms)
+[RAW_EXTRACT][rx-mmastxlu-h2dvo] done sections=0 items=0 (90934ms)
+1:06:50 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+[RAW_EXTRACT][rx-mmaswdn7-lblv2] start page=1 maxPages=1 bytes=4021524
+[RAW_EXTRACT][rx-mmaswdn7-lblv2] page 1/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaswdn7-lblv2] OCR vision page=1 rows=65 (55346ms)
+[RAW_EXTRACT][rx-mmaswdn7-lblv2] page 1/22 rows=65 cells=65 (55752ms)
+[RAW_EXTRACT][rx-mmaswdn7-lblv2] done sections=1 items=32 (56418ms)
+1:35:13 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+1:35:32 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+1:35:48 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+1:36:07 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+1:36:15 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+[RAW_EXTRACT][rx-mmautmhm-bi99k] start page=1 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmautmhm-bi99k] page 1/22 nativeCells=0
+[RAW_EXTRACT][rx-mmautmhm-bi99k] OCR vision start page=1 timeoutMs=45000
+[RAW_EXTRACT][rx-mmautmhm-bi99k] page 1/22 rows=0 cells=0 (46081ms)
+[RAW_EXTRACT][rx-mmauuvox-19pg8] start page=1 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmauuvox-19pg8] page 1/22 nativeCells=0
+[RAW_EXTRACT][rx-mmauuvox-19pg8] OCR vision start page=1 timeoutMs=45000
+[RAW_EXTRACT][rx-mmauvb6b-lr7s0] start page=2 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmauvb6b-lr7s0] page 2/22 nativeCells=0
+[RAW_EXTRACT][rx-mmauvb6b-lr7s0] OCR vision start page=2 timeoutMs=45000
+[RAW_EXTRACT][rx-mmauuvox-19pg8] OCR vision page=1 rows=62 (37883ms)
+[RAW_EXTRACT][rx-mmauuvox-19pg8] page 1/22 rows=62 cells=62 (39244ms)
+[RAW_EXTRACT][rx-mmauvqng-gp66f] start page=3 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmauvqng-gp66f] page 3/22 nativeCells=0
+[RAW_EXTRACT][rx-mmauvqng-gp66f] OCR vision start page=3 timeoutMs=45000
+[RAW_EXTRACT][rx-mmauvqng-gp66f] OCR vision page=3 rows=56 (17883ms)
+[RAW_EXTRACT][rx-mmauvqng-gp66f] page 3/22 rows=56 cells=56 (19039ms)
+[RAW_EXTRACT][rx-mmauvqng-gp66f] done sections=0 items=0 (19048ms)
+[RAW_EXTRACT][rx-mmauw5di-0rc79] start page=4 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmauw5di-0rc79] page 4/22 nativeCells=0
+[RAW_EXTRACT][rx-mmauw5di-0rc79] OCR vision start page=4 timeoutMs=45000
+[RAW_EXTRACT][rx-mmauvb6b-lr7s0] page 2/22 rows=0 cells=0 (46426ms)
+[RAW_EXTRACT][rx-mmauwkuo-a6f15] start page=5 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmauwkuo-a6f15] page 5/22 nativeCells=0
+[RAW_EXTRACT][rx-mmauwkuo-a6f15] OCR vision start page=5 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaux0bq-3dfyf] start page=6 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmaux0bq-3dfyf] page 6/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaux0bq-3dfyf] OCR vision start page=6 timeoutMs=45000
+[RAW_EXTRACT][rx-mmauw5di-0rc79] OCR vision page=4 rows=65 (44796ms)
+[RAW_EXTRACT][rx-mmauw5di-0rc79] page 4/22 rows=65 cells=65 (46037ms)
+[RAW_EXTRACT][rx-mmauwkuo-a6f15] OCR vision page=5 rows=36 (29895ms)
+[RAW_EXTRACT][rx-mmauwkuo-a6f15] page 5/22 rows=36 cells=36 (31012ms)
+[RAW_EXTRACT][rx-mmauxfsz-7oqm4] start page=7 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmauxfsz-7oqm4] page 7/22 nativeCells=0
+[RAW_EXTRACT][rx-mmauxfsz-7oqm4] OCR vision start page=7 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaux0bq-3dfyf] OCR vision page=6 rows=26 (20586ms)
+[RAW_EXTRACT][rx-mmaux0bq-3dfyf] page 6/22 rows=26 cells=26 (21504ms)
+[RAW_EXTRACT][rx-mmauxfsz-7oqm4] OCR vision page=7 rows=27 (15815ms)
+[RAW_EXTRACT][rx-mmauxfsz-7oqm4] page 7/22 rows=27 cells=27 (16836ms)
+[RAW_EXTRACT][rx-mmauxfsz-7oqm4] done sections=0 items=0 (16844ms)
+[RAW_EXTRACT][rx-mmauxsts-kj1gv] start page=8 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmauxsts-kj1gv] page 8/22 nativeCells=0
+[RAW_EXTRACT][rx-mmauxsts-kj1gv] OCR vision start page=8 timeoutMs=45000
+[RAW_EXTRACT][rx-mmauxsts-kj1gv] OCR vision page=8 rows=29 (14842ms)
+[RAW_EXTRACT][rx-mmauxsts-kj1gv] page 8/22 rows=29 cells=29 (15866ms)
+[RAW_EXTRACT][rx-mmauxsts-kj1gv] done sections=0 items=0 (15873ms)
+[RAW_EXTRACT][rx-mmauy53o-9opwo] start page=9 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmauy53o-9opwo] page 9/22 nativeCells=0
+[RAW_EXTRACT][rx-mmauy53o-9opwo] OCR vision start page=9 timeoutMs=45000
+[RAW_EXTRACT][rx-mmauykkb-zttrk] start page=10 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmauykkb-zttrk] page 10/22 nativeCells=0
+[RAW_EXTRACT][rx-mmauykkb-zttrk] OCR vision start page=10 timeoutMs=45000
+[RAW_EXTRACT][rx-mmauy53o-9opwo] OCR vision page=9 rows=41 (22869ms)
+[RAW_EXTRACT][rx-mmauy53o-9opwo] page 9/22 rows=41 cells=41 (23623ms)
+[RAW_EXTRACT][rx-mmauykkb-zttrk] OCR vision page=10 rows=23 (10506ms)
+[RAW_EXTRACT][rx-mmauykkb-zttrk] page 10/22 rows=23 cells=23 (11099ms)
+[RAW_EXTRACT][rx-mmauykkb-zttrk] done sections=0 items=0 (11106ms)
+[RAW_EXTRACT][rx-mmauyt5m-lik5n] start page=11 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmauyt5m-lik5n] page 11/22 nativeCells=0
+[RAW_EXTRACT][rx-mmauyt5m-lik5n] OCR vision start page=11 timeoutMs=45000
+[RAW_EXTRACT][rx-mmauyt5m-lik5n] OCR vision page=11 rows=26 (16867ms)
+[RAW_EXTRACT][rx-mmauyt5m-lik5n] page 11/22 rows=26 cells=26 (17590ms)
+[RAW_EXTRACT][rx-mmauyt5m-lik5n] done sections=1 items=1 (17597ms)
+[RAW_EXTRACT][rx-mmauz6r8-4neoc] start page=12 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmauz6r8-4neoc] page 12/22 nativeCells=0
+[RAW_EXTRACT][rx-mmauz6r8-4neoc] OCR vision start page=12 timeoutMs=45000
+[RAW_EXTRACT][rx-mmauzm8m-p0t35] start page=13 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmauzm8m-p0t35] page 13/22 nativeCells=0
+[RAW_EXTRACT][rx-mmauzm8m-p0t35] OCR vision start page=13 timeoutMs=45000
+[RAW_EXTRACT][rx-mmauzm8m-p0t35] OCR vision page=13 rows=20 (9294ms)
+[RAW_EXTRACT][rx-mmauzm8m-p0t35] page 13/22 rows=20 cells=20 (10178ms)
+[RAW_EXTRACT][rx-mmauzm8m-p0t35] done sections=1 items=2 (10188ms)
+[RAW_EXTRACT][rx-mmauzu4l-xd5an] start page=14 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmauzu4l-xd5an] page 14/22 nativeCells=0
+[RAW_EXTRACT][rx-mmauzu4l-xd5an] OCR vision start page=14 timeoutMs=45000
+[RAW_EXTRACT][rx-mmauz6r8-4neoc] OCR vision page=12 rows=60 (35188ms)
+[RAW_EXTRACT][rx-mmauz6r8-4neoc] page 12/22 rows=60 cells=60 (36039ms)
+[RAW_EXTRACT][rx-mmauzu4l-xd5an] OCR vision page=14 rows=33 (18392ms)
+[RAW_EXTRACT][rx-mmauzu4l-xd5an] page 14/22 rows=33 cells=33 (19582ms)
+[RAW_EXTRACT][rx-mmauzu4l-xd5an] done sections=1 items=11 (19591ms)
+[RAW_EXTRACT][rx-mmav099q-4ocvx] start page=15 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmav099q-4ocvx] page 15/22 nativeCells=0
+[RAW_EXTRACT][rx-mmav099q-4ocvx] OCR vision start page=15 timeoutMs=45000
+[RAW_EXTRACT][rx-mmav099q-4ocvx] OCR vision page=15 rows=13 (8710ms)
+[RAW_EXTRACT][rx-mmav099q-4ocvx] page 15/22 rows=13 cells=13 (9623ms)
+[RAW_EXTRACT][rx-mmav099q-4ocvx] done sections=0 items=0 (9629ms)
+[RAW_EXTRACT][rx-mmav0gpz-nhsca] start page=16 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmav0gpz-nhsca] page 16/22 nativeCells=0
+[RAW_EXTRACT][rx-mmav0gpz-nhsca] OCR vision start page=16 timeoutMs=45000
+[RAW_EXTRACT][rx-mmav0gpz-nhsca] OCR vision page=16 rows=30 (14842ms)
+[RAW_EXTRACT][rx-mmav0gpz-nhsca] page 16/22 rows=30 cells=30 (15986ms)
+[RAW_EXTRACT][rx-mmav0gpz-nhsca] done sections=1 items=10 (15994ms)
+[RAW_EXTRACT][rx-mmav0t35-pmon7] start page=17 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmav0t35-pmon7] page 17/22 nativeCells=0
+[RAW_EXTRACT][rx-mmav0t35-pmon7] OCR vision start page=17 timeoutMs=45000
+[RAW_EXTRACT][rx-mmav0t35-pmon7] OCR vision page=17 rows=18 (8035ms)
+[RAW_EXTRACT][rx-mmav0t35-pmon7] page 17/22 rows=18 cells=18 (9042ms)
+[RAW_EXTRACT][rx-mmav0t35-pmon7] done sections=0 items=0 (9050ms)
+[RAW_EXTRACT][rx-mmav103d-y34r0] start page=18 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmav103d-y34r0] page 18/22 nativeCells=0
+[RAW_EXTRACT][rx-mmav103d-y34r0] OCR vision start page=18 timeoutMs=45000
+[RAW_EXTRACT][rx-mmav1fkb-herjs] start page=19 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmav1fkb-herjs] page 19/22 nativeCells=0
+[RAW_EXTRACT][rx-mmav1fkb-herjs] OCR vision start page=19 timeoutMs=45000
+[RAW_EXTRACT][rx-mmav103d-y34r0] OCR vision page=18 rows=26 (20387ms)
+[RAW_EXTRACT][rx-mmav103d-y34r0] page 18/22 rows=26 cells=26 (21585ms)
+[RAW_EXTRACT][rx-mmav1fkb-herjs] OCR vision page=19 rows=24 (12381ms)
+[RAW_EXTRACT][rx-mmav1fkb-herjs] page 19/22 rows=24 cells=24 (13413ms)
+[RAW_EXTRACT][rx-mmav1fkb-herjs] done sections=0 items=0 (13420ms)
+[RAW_EXTRACT][rx-mmav1pxz-1563q] start page=20 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmav1pxz-1563q] page 20/22 nativeCells=0
+[RAW_EXTRACT][rx-mmav1pxz-1563q] OCR vision start page=20 timeoutMs=45000
+[RAW_EXTRACT][rx-mmav1pxz-1563q] OCR vision page=20 rows=46 (18940ms)
+[RAW_EXTRACT][rx-mmav1pxz-1563q] page 20/22 rows=46 cells=46 (20016ms)
+[RAW_EXTRACT][rx-mmav25eq-g0vin] start page=21 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmav25eq-g0vin] page 21/22 nativeCells=0
+[RAW_EXTRACT][rx-mmav25eq-g0vin] OCR vision start page=21 timeoutMs=45000
+[RAW_EXTRACT][rx-mmav2kwd-kipl8] start page=22 maxPages=1 bytes=4021524 timeoutMs=20000
+[RAW_EXTRACT][rx-mmav2kwd-kipl8] page 22/22 nativeCells=0
+[RAW_EXTRACT][rx-mmav2kwd-kipl8] OCR vision start page=22 timeoutMs=45000
+[RAW_EXTRACT][rx-mmav25eq-g0vin] OCR vision page=21 rows=38 (24902ms)
+[RAW_EXTRACT][rx-mmav25eq-g0vin] page 21/22 rows=38 cells=38 (25975ms)
+[RAW_EXTRACT][rx-mmav2kwd-kipl8] OCR vision page=22 rows=19 (10502ms)
+[RAW_EXTRACT][rx-mmav2kwd-kipl8] page 22/22 rows=19 cells=19 (11456ms)
+[RAW_EXTRACT][rx-mmav2kwd-kipl8] done sections=0 items=0 (11464ms)
+[RAW_EXTRACT][rx-mmav33sd-iw9k7] start page=1 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmav33sd-iw9k7] page 1/22 nativeCells=0
+[RAW_EXTRACT][rx-mmav33sd-iw9k7] OCR vision start page=1 timeoutMs=45000
+[RAW_EXTRACT][rx-mmav33sd-iw9k7] OCR vision page=1 rows=66 (44273ms)
+[RAW_EXTRACT][rx-mmav33sd-iw9k7] page 1/22 rows=66 cells=66 (45500ms)
+[RAW_EXTRACT][rx-mmav33sd-iw9k7] done sections=1 items=33 (45509ms)
+2:18:55 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+[RAW_EXTRACT][rx-mmavs1p1-ux0ws] start page=1 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavs1p1-ux0ws] page 1/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavs1p1-ux0ws] OCR vision start page=1 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavs1p1-ux0ws] page 1/22 rows=0 cells=0 (46717ms)
+[RAW_EXTRACT][rx-mmavs1p1-ux0ws] done sections=0 items=0 (48944ms)
+[RAW_EXTRACT][rx-mmavt3jk-r5nj1] start page=2 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavt3jk-r5nj1] page 2/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavt3jk-r5nj1] OCR vision start page=2 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavt3jk-r5nj1] page 2/22 rows=0 cells=0 (46494ms)
+[RAW_EXTRACT][rx-mmavt3jk-r5nj1] done sections=0 items=0 (46505ms)
+[RAW_EXTRACT][rx-mmavu3qk-vs5yh] start page=3 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavu3qk-vs5yh] page 3/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavu3qk-vs5yh] OCR vision start page=3 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavu3qk-vs5yh] OCR vision page=3 rows=18 (11235ms)
+[RAW_EXTRACT][rx-mmavu3qk-vs5yh] page 3/22 rows=18 cells=18 (12070ms)
+[RAW_EXTRACT][rx-mmavu3qk-vs5yh] done sections=0 items=0 (12087ms)
+[RAW_EXTRACT][rx-mmavud5o-ergfu] start page=4 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavud5o-ergfu] page 4/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavud5o-ergfu] OCR vision start page=4 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavud5o-ergfu] page 4/22 rows=0 cells=0 (46083ms)
+[RAW_EXTRACT][rx-mmavud5o-ergfu] done sections=0 items=0 (46093ms)
+[RAW_EXTRACT][rx-mmavvd24-f32j9] start page=5 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavvd24-f32j9] page 5/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavvd24-f32j9] OCR vision start page=5 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavvd24-f32j9] OCR vision page=5 rows=29 (23345ms)
+[RAW_EXTRACT][rx-mmavvd24-f32j9] page 5/22 rows=29 cells=29 (24583ms)
+[RAW_EXTRACT][rx-mmavvd24-f32j9] done sections=0 items=0 (24599ms)
+[RAW_EXTRACT][rx-mmavvw4j-6bujs] start page=6 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavvw4j-6bujs] page 6/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavvw4j-6bujs] OCR vision start page=6 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavvw4j-6bujs] OCR vision page=6 rows=39 (16249ms)
+[RAW_EXTRACT][rx-mmavvw4j-6bujs] page 6/22 rows=39 cells=39 (17351ms)
+[RAW_EXTRACT][rx-mmavvw4j-6bujs] done sections=0 items=0 (17360ms)
+[RAW_EXTRACT][rx-mmavw9ur-a5u1q] start page=7 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavw9ur-a5u1q] page 7/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavw9ur-a5u1q] OCR vision start page=7 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavw9ur-a5u1q] OCR vision page=7 rows=55 (21756ms)
+[RAW_EXTRACT][rx-mmavw9ur-a5u1q] page 7/22 rows=55 cells=55 (22880ms)
+[RAW_EXTRACT][rx-mmavw9ur-a5u1q] done sections=0 items=0 (22898ms)
+[RAW_EXTRACT][rx-mmavwrlo-sd6mt] start page=8 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavwrlo-sd6mt] page 8/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavwrlo-sd6mt] OCR vision start page=8 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavwrlo-sd6mt] OCR vision page=8 rows=36 (13264ms)
+[RAW_EXTRACT][rx-mmavwrlo-sd6mt] page 8/22 rows=36 cells=36 (14459ms)
+[RAW_EXTRACT][rx-mmavwrlo-sd6mt] done sections=0 items=0 (14480ms)
+[RAW_EXTRACT][rx-mmavx337-2k52n] start page=9 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavx337-2k52n] page 9/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavx337-2k52n] OCR vision start page=9 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavx337-2k52n] OCR vision page=9 rows=22 (12219ms)
+[RAW_EXTRACT][rx-mmavx337-2k52n] page 9/22 rows=22 cells=22 (13457ms)
+[RAW_EXTRACT][rx-mmavx337-2k52n] done sections=1 items=1 (13468ms)
+[RAW_EXTRACT][rx-mmavxdjp-whguh] start page=10 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavxdjp-whguh] page 10/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavxdjp-whguh] OCR vision start page=10 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavxdjp-whguh] OCR vision page=10 rows=25 (10542ms)
+[RAW_EXTRACT][rx-mmavxdjp-whguh] page 10/22 rows=25 cells=25 (11622ms)
+[RAW_EXTRACT][rx-mmavxdjp-whguh] done sections=0 items=0 (11630ms)
+[RAW_EXTRACT][rx-mmavxmuk-659kq] start page=11 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavxmuk-659kq] page 11/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavxmuk-659kq] OCR vision start page=11 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavxmuk-659kq] OCR vision page=11 rows=26 (10413ms)
+[RAW_EXTRACT][rx-mmavxmuk-659kq] page 11/22 rows=26 cells=26 (11568ms)
+[RAW_EXTRACT][rx-mmavxmuk-659kq] done sections=1 items=1 (11578ms)
+[RAW_EXTRACT][rx-mmavxvw0-jx1hx] start page=12 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavxvw0-jx1hx] page 12/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavxvw0-jx1hx] OCR vision start page=12 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavxvw0-jx1hx] OCR vision page=12 rows=65 (25497ms)
+[RAW_EXTRACT][rx-mmavxvw0-jx1hx] page 12/22 rows=65 cells=65 (26884ms)
+[RAW_EXTRACT][rx-mmavxvw0-jx1hx] done sections=1 items=26 (26898ms)
+[RAW_EXTRACT][rx-mmavygz8-30gdm] start page=13 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavygz8-30gdm] page 13/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavygz8-30gdm] OCR vision start page=13 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavygz8-30gdm] OCR vision page=13 rows=21 (13214ms)
+[RAW_EXTRACT][rx-mmavygz8-30gdm] page 13/22 rows=21 cells=21 (14259ms)
+[RAW_EXTRACT][rx-mmavygz8-30gdm] done sections=1 items=2 (14267ms)
+[RAW_EXTRACT][rx-mmavys1t-b2ryw] start page=14 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavys1t-b2ryw] page 14/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavys1t-b2ryw] OCR vision start page=14 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavys1t-b2ryw] OCR vision page=14 rows=84 (36024ms)
+[RAW_EXTRACT][rx-mmavys1t-b2ryw] page 14/22 rows=84 cells=84 (37391ms)
+[RAW_EXTRACT][rx-mmavys1t-b2ryw] done sections=1 items=22 (37400ms)
+[RAW_EXTRACT][rx-mmavzl83-3p8tt] start page=15 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavzl83-3p8tt] page 15/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavzl83-3p8tt] OCR vision start page=15 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavzl83-3p8tt] OCR vision page=15 rows=16 (13235ms)
+[RAW_EXTRACT][rx-mmavzl83-3p8tt] page 15/22 rows=16 cells=16 (13996ms)
+[RAW_EXTRACT][rx-mmavzl83-3p8tt] done sections=0 items=0 (14008ms)
+[RAW_EXTRACT][rx-mmavzw3t-x1ydc] start page=16 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmavzw3t-x1ydc] page 16/22 nativeCells=0
+[RAW_EXTRACT][rx-mmavzw3t-x1ydc] OCR vision start page=16 timeoutMs=45000
+[RAW_EXTRACT][rx-mmavzw3t-x1ydc] OCR vision page=16 rows=25 (16157ms)
+[RAW_EXTRACT][rx-mmavzw3t-x1ydc] page 16/22 rows=25 cells=25 (17012ms)
+[RAW_EXTRACT][rx-mmavzw3t-x1ydc] done sections=1 items=9 (17020ms)
+[RAW_EXTRACT][rx-mmaw09mc-iun5d] start page=17 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaw09mc-iun5d] page 17/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaw09mc-iun5d] OCR vision start page=17 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaw09mc-iun5d] OCR vision page=17 rows=19 (8183ms)
+[RAW_EXTRACT][rx-mmaw09mc-iun5d] page 17/22 rows=19 cells=19 (8887ms)
+[RAW_EXTRACT][rx-mmaw09mc-iun5d] done sections=0 items=0 (8907ms)
+[RAW_EXTRACT][rx-mmaw0gl7-pzxed] start page=18 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaw0gl7-pzxed] page 18/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaw0gl7-pzxed] OCR vision start page=18 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaw0gl7-pzxed] OCR vision page=18 rows=26 (22602ms)
+[RAW_EXTRACT][rx-mmaw0gl7-pzxed] page 18/22 rows=26 cells=26 (23419ms)
+[RAW_EXTRACT][rx-mmaw0gl7-pzxed] done sections=1 items=9 (23427ms)
+[RAW_EXTRACT][rx-mmaw0z09-zhzzx] start page=19 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaw0z09-zhzzx] page 19/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaw0z09-zhzzx] OCR vision start page=19 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaw0z09-zhzzx] OCR vision page=19 rows=24 (11115ms)
+[RAW_EXTRACT][rx-mmaw0z09-zhzzx] page 19/22 rows=24 cells=24 (12087ms)
+[RAW_EXTRACT][rx-mmaw0z09-zhzzx] done sections=0 items=0 (12097ms)
+[RAW_EXTRACT][rx-mmaw18f3-swcig] start page=20 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaw18f3-swcig] page 20/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaw18f3-swcig] OCR vision start page=20 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaw18f3-swcig] OCR vision page=20 rows=70 (24102ms)
+[RAW_EXTRACT][rx-mmaw18f3-swcig] page 20/22 rows=70 cells=70 (25203ms)
+[RAW_EXTRACT][rx-mmaw18f3-swcig] done sections=1 items=17 (25212ms)
+[RAW_EXTRACT][rx-mmaw1s6v-wmyng] start page=21 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaw1s6v-wmyng] page 21/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaw1s6v-wmyng] OCR vision start page=21 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaw1s6v-wmyng] OCR vision page=21 rows=36 (21701ms)
+[RAW_EXTRACT][rx-mmaw1s6v-wmyng] page 21/22 rows=36 cells=36 (22987ms)
+[RAW_EXTRACT][rx-mmaw1s6v-wmyng] done sections=1 items=13 (23009ms)
+[RAW_EXTRACT][rx-mmaw2a18-ccjsp] start page=22 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaw2a18-ccjsp] page 22/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaw2a18-ccjsp] OCR vision start page=22 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaw2a18-ccjsp] OCR vision page=22 rows=15 (10980ms)
+[RAW_EXTRACT][rx-mmaw2a18-ccjsp] page 22/22 rows=15 cells=15 (12014ms)
+[RAW_EXTRACT][rx-mmaw2a18-ccjsp] done sections=0 items=0 (12021ms)
+2:42:05 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+2:42:13 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+2:42:19 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+[RAW_EXTRACT][rx-mmawcbcq-z3hxb] start page=11 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmawcbcq-z3hxb] page 11/22 nativeCells=0
+[RAW_EXTRACT][rx-mmawcbcq-z3hxb] OCR vision start page=11 timeoutMs=45000
+[RAW_EXTRACT][rx-mmawcbcq-z3hxb] OCR vision page=11 rows=25 (17107ms)
+[RAW_EXTRACT][rx-mmawcbcq-z3hxb] page 11/22 rows=25 cells=25 (18428ms)
+[RAW_EXTRACT][rx-mmawcbcq-z3hxb] done sections=1 items=1 (20390ms)
+2:46:47 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c2:47:02 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Rerunning...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+2:47:24 p. m. [tsx] change in ./server\endpoints\raw-extract.endpoint.ts Restarting...
+c✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
+Backend server running on port 5000
+[RAW_EXTRACT][rx-mmaxrqlu-22fud] start page=1 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaxrqlu-22fud] page 1/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaxrqlu-22fud] OCR vision start page=1 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaxrqlu-22fud] page 1/22 rows=0 cells=0 (46644ms)
+[RAW_EXTRACT][rx-mmaxrqlu-22fud] done sections=0 items=0 (48870ms)
+[RAW_EXTRACT][rx-mmaxssna-xvqdd] start page=2 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaxssna-xvqdd] page 2/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaxssna-xvqdd] OCR vision start page=2 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaxssna-xvqdd] page 2/22 rows=0 cells=0 (46109ms)
+[RAW_EXTRACT][rx-mmaxssna-xvqdd] done sections=0 items=0 (46124ms)
+[RAW_EXTRACT][rx-mmaxtscg-ty1wo] start page=3 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaxtscg-ty1wo] page 3/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaxtscg-ty1wo] OCR vision start page=3 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaxtscg-ty1wo] OCR vision page=3 rows=42 (24671ms)
+[RAW_EXTRACT][rx-mmaxtscg-ty1wo] page 3/22 rows=42 cells=42 (25555ms)
+[RAW_EXTRACT][rx-mmaxtscg-ty1wo] done sections=0 items=0 (25570ms)
+[RAW_EXTRACT][rx-mmaxucdo-hf65u] start page=4 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaxucdo-hf65u] page 4/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaxucdo-hf65u] OCR vision start page=4 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaxucdo-hf65u] page 4/22 rows=0 cells=0 (46514ms)
+[RAW_EXTRACT][rx-mmaxucdo-hf65u] done sections=0 items=0 (46522ms)
+[RAW_EXTRACT][rx-mmaxvcd8-75blv] start page=5 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaxvcd8-75blv] page 5/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaxvcd8-75blv] OCR vision start page=5 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaxvcd8-75blv] OCR vision page=5 rows=37 (33738ms)
+[RAW_EXTRACT][rx-mmaxvcd8-75blv] page 5/22 rows=37 cells=37 (34631ms)
+[RAW_EXTRACT][rx-mmaxvcd8-75blv] done sections=0 items=0 (34647ms)
+[RAW_EXTRACT][rx-mmaxw3en-bw9fh] start page=6 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaxw3en-bw9fh] page 6/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaxw3en-bw9fh] OCR vision start page=6 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaxw3en-bw9fh] OCR vision page=6 rows=29 (14495ms)
+[RAW_EXTRACT][rx-mmaxw3en-bw9fh] page 6/22 rows=29 cells=29 (15317ms)
+[RAW_EXTRACT][rx-mmaxw3en-bw9fh] done sections=1 items=3 (15328ms)
+[RAW_EXTRACT][rx-mmaxwfcs-9yop9] start page=7 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaxwfcs-9yop9] page 7/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaxwfcs-9yop9] OCR vision start page=7 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaxwfcs-9yop9] OCR vision page=7 rows=41 (17860ms)
+[RAW_EXTRACT][rx-mmaxwfcs-9yop9] page 7/22 rows=41 cells=41 (19063ms)
+[RAW_EXTRACT][rx-mmaxwfcs-9yop9] done sections=1 items=4 (19078ms)
+[RAW_EXTRACT][rx-mmaxwuej-akduv] start page=8 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaxwuej-akduv] page 8/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaxwuej-akduv] OCR vision start page=8 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaxwuej-akduv] OCR vision page=8 rows=26 (18702ms)
+[RAW_EXTRACT][rx-mmaxwuej-akduv] page 8/22 rows=26 cells=26 (19805ms)
+[RAW_EXTRACT][rx-mmaxwuej-akduv] done sections=0 items=0 (19817ms)
+[RAW_EXTRACT][rx-mmaxx9rw-s1d66] start page=9 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaxx9rw-s1d66] page 9/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaxx9rw-s1d66] OCR vision start page=9 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaxx9rw-s1d66] OCR vision page=9 rows=21 (15313ms)
+[RAW_EXTRACT][rx-mmaxx9rw-s1d66] page 9/22 rows=21 cells=21 (16539ms)
+[RAW_EXTRACT][rx-mmaxx9rw-s1d66] done sections=0 items=0 (16548ms)
+[RAW_EXTRACT][rx-mmaxxmut-9p3wk] start page=10 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaxxmut-9p3wk] page 10/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaxxmut-9p3wk] OCR vision start page=10 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaxxmut-9p3wk] OCR vision page=10 rows=26 (8919ms)
+[RAW_EXTRACT][rx-mmaxxmut-9p3wk] page 10/22 rows=26 cells=26 (9721ms)
+[RAW_EXTRACT][rx-mmaxxmut-9p3wk] done sections=0 items=0 (9730ms)
+[RAW_EXTRACT][rx-mmaxxufv-qhzax] start page=11 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaxxufv-qhzax] page 11/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaxxufv-qhzax] OCR vision start page=11 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaxxufv-qhzax] OCR vision page=11 rows=25 (16374ms)
+[RAW_EXTRACT][rx-mmaxxufv-qhzax] page 11/22 rows=25 cells=25 (17222ms)
+[RAW_EXTRACT][rx-mmaxxufv-qhzax] done sections=0 items=0 (17229ms)
+[RAW_EXTRACT][rx-mmaxy82w-9z6lb] start page=12 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaxy82w-9z6lb] page 12/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaxy82w-9z6lb] OCR vision start page=12 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaxy82w-9z6lb] OCR vision page=12 rows=67 (37074ms)
+[RAW_EXTRACT][rx-mmaxy82w-9z6lb] page 12/22 rows=67 cells=67 (38066ms)
+[RAW_EXTRACT][rx-mmaxy82w-9z6lb] done sections=0 items=0 (38082ms)
+[RAW_EXTRACT][rx-mmaxz1lq-q5jpo] start page=13 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaxz1lq-q5jpo] page 13/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaxz1lq-q5jpo] OCR vision start page=13 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaxz1lq-q5jpo] OCR vision page=13 rows=24 (11525ms)
+[RAW_EXTRACT][rx-mmaxz1lq-q5jpo] page 13/22 rows=24 cells=24 (12420ms)
+[RAW_EXTRACT][rx-mmaxz1lq-q5jpo] done sections=0 items=0 (12439ms)
+[RAW_EXTRACT][rx-mmaxzbib-dapyo] start page=14 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaxzbib-dapyo] page 14/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaxzbib-dapyo] OCR vision start page=14 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaxzbib-dapyo] OCR vision page=14 rows=62 (43349ms)
+[RAW_EXTRACT][rx-mmaxzbib-dapyo] page 14/22 rows=62 cells=62 (44664ms)
+[RAW_EXTRACT][rx-mmaxzbib-dapyo] done sections=0 items=0 (44673ms)
+[RAW_EXTRACT][rx-mmay0a23-e24as] start page=15 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmay0a23-e24as] page 15/22 nativeCells=0
+[RAW_EXTRACT][rx-mmay0a23-e24as] OCR vision start page=15 timeoutMs=45000
+[RAW_EXTRACT][rx-mmay0a23-e24as] OCR vision page=15 rows=15 (6894ms)
+[RAW_EXTRACT][rx-mmay0a23-e24as] page 15/22 rows=15 cells=15 (7961ms)
+[RAW_EXTRACT][rx-mmay0a23-e24as] done sections=0 items=0 (7970ms)
+[RAW_EXTRACT][rx-mmay0ghx-5fqud] start page=16 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmay0ghx-5fqud] page 16/22 nativeCells=0
+[RAW_EXTRACT][rx-mmay0ghx-5fqud] OCR vision start page=16 timeoutMs=45000
+[RAW_EXTRACT][rx-mmay0ghx-5fqud] OCR vision page=16 rows=42 (19980ms)
+[RAW_EXTRACT][rx-mmay0ghx-5fqud] page 16/22 rows=42 cells=42 (21301ms)
+[RAW_EXTRACT][rx-mmay0ghx-5fqud] done sections=0 items=0 (21310ms)
+[RAW_EXTRACT][rx-mmay0x07-sk8cn] start page=17 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmay0x07-sk8cn] page 17/22 nativeCells=0
+[RAW_EXTRACT][rx-mmay0x07-sk8cn] OCR vision start page=17 timeoutMs=45000
+[RAW_EXTRACT][rx-mmay0x07-sk8cn] OCR vision page=17 rows=18 (8101ms)
+[RAW_EXTRACT][rx-mmay0x07-sk8cn] page 17/22 rows=18 cells=18 (9147ms)
+[RAW_EXTRACT][rx-mmay0x07-sk8cn] done sections=0 items=0 (9155ms)
+[RAW_EXTRACT][rx-mmay14ep-ayxs9] start page=18 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmay14ep-ayxs9] page 18/22 nativeCells=0
+[RAW_EXTRACT][rx-mmay14ep-ayxs9] OCR vision start page=18 timeoutMs=45000
+[RAW_EXTRACT][rx-mmay14ep-ayxs9] OCR vision page=18 rows=26 (17392ms)
+[RAW_EXTRACT][rx-mmay14ep-ayxs9] page 18/22 rows=26 cells=26 (18600ms)
+[RAW_EXTRACT][rx-mmay14ep-ayxs9] done sections=0 items=0 (18613ms)
+[RAW_EXTRACT][rx-mmay1ius-wvb0q] start page=19 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmay1ius-wvb0q] page 19/22 nativeCells=0
+[RAW_EXTRACT][rx-mmay1ius-wvb0q] OCR vision start page=19 timeoutMs=45000
+[RAW_EXTRACT][rx-mmay1ius-wvb0q] OCR vision page=19 rows=24 (13311ms)
+[RAW_EXTRACT][rx-mmay1ius-wvb0q] page 19/22 rows=24 cells=24 (14426ms)
+[RAW_EXTRACT][rx-mmay1ius-wvb0q] done sections=0 items=0 (14433ms)
+[RAW_EXTRACT][rx-mmay1uba-ja8nn] start page=20 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmay1uba-ja8nn] page 20/22 nativeCells=0
+[RAW_EXTRACT][rx-mmay1uba-ja8nn] OCR vision start page=20 timeoutMs=45000
+[RAW_EXTRACT][rx-mmay1uba-ja8nn] OCR vision page=20 rows=70 (28350ms)
+[RAW_EXTRACT][rx-mmay1uba-ja8nn] page 20/22 rows=70 cells=70 (29536ms)
+[RAW_EXTRACT][rx-mmay1uba-ja8nn] done sections=0 items=0 (29547ms)
+[RAW_EXTRACT][rx-mmay2h6w-uhjxq] start page=21 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmay2h6w-uhjxq] page 21/22 nativeCells=0
+[RAW_EXTRACT][rx-mmay2h6w-uhjxq] OCR vision start page=21 timeoutMs=45000
+[RAW_EXTRACT][rx-mmay2h6w-uhjxq] OCR vision page=21 rows=35 (22476ms)
+[RAW_EXTRACT][rx-mmay2h6w-uhjxq] page 21/22 rows=35 cells=35 (23714ms)
+[RAW_EXTRACT][rx-mmay2h6w-uhjxq] done sections=1 items=13 (23723ms)
+[RAW_EXTRACT][rx-mmay2zt7-wvvkl] start page=22 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmay2zt7-wvvkl] page 22/22 nativeCells=0
+[RAW_EXTRACT][rx-mmay2zt7-wvvkl] OCR vision start page=22 timeoutMs=45000
+[RAW_EXTRACT][rx-mmay2zt7-wvvkl] OCR vision page=22 rows=15 (9462ms)
+[RAW_EXTRACT][rx-mmay2zt7-wvvkl] page 22/22 rows=15 cells=15 (10203ms)
+[RAW_EXTRACT][rx-mmay2zt7-wvvkl] done sections=0 items=0 (10211ms)
+[RAW_EXTRACT][rx-mmazgyab-e6jft] start page=1 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazgyab-e6jft] page 1/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazgyab-e6jft] OCR vision start page=1 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazgyab-e6jft] OCR vision page=1 rows=66 (44083ms)
+[RAW_EXTRACT][rx-mmazgyab-e6jft] page 1/22 rows=66 cells=66 (45634ms)
+[RAW_EXTRACT][rx-mmazgyab-e6jft] done sections=1 items=32 (45644ms)
+[RAW_EXTRACT][rx-mmazhxw2-mnid0] start page=2 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazhxw2-mnid0] page 2/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazhxw2-mnid0] OCR vision start page=2 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazhxw2-mnid0] page 2/22 rows=0 cells=0 (46261ms)
+[RAW_EXTRACT][rx-mmazhxw2-mnid0] done sections=0 items=0 (46272ms)
+[RAW_EXTRACT][rx-mmazlh08-cvxtc] start page=1 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazlh08-cvxtc] page 1/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazlh08-cvxtc] OCR vision start page=1 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazlh08-cvxtc] OCR vision page=1 rows=63 (37714ms)
+[RAW_EXTRACT][rx-mmazlh08-cvxtc] page 1/22 rows=63 cells=63 (38758ms)
+[RAW_EXTRACT][rx-mmazlh08-cvxtc] done sections=1 items=31 (38769ms)
+[RAW_EXTRACT][rx-mmazmba0-xhvpl] start page=2 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazmba0-xhvpl] page 2/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazmba0-xhvpl] OCR vision start page=2 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazmba0-xhvpl] OCR vision page=2 rows=56 (41939ms)
+[RAW_EXTRACT][rx-mmazmba0-xhvpl] page 2/22 rows=56 cells=56 (43433ms)
+[RAW_EXTRACT][rx-mmazmba0-xhvpl] done sections=1 items=36 (43457ms)
+[RAW_EXTRACT][rx-mmazn8vj-klytm] start page=3 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazn8vj-klytm] page 3/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazn8vj-klytm] OCR vision start page=3 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazn8vj-klytm] OCR vision page=3 rows=22 (11084ms)
+[RAW_EXTRACT][rx-mmazn8vj-klytm] page 3/22 rows=22 cells=22 (12105ms)
+[RAW_EXTRACT][rx-mmazn8vj-klytm] done sections=0 items=0 (12112ms)
+[RAW_EXTRACT][rx-mmaznijm-928mv] start page=4 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaznijm-928mv] page 4/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaznijm-928mv] OCR vision start page=4 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaznijm-928mv] page 4/22 rows=0 cells=0 (46341ms)
+[RAW_EXTRACT][rx-mmaznijm-928mv] done sections=0 items=0 (46358ms)
+[RAW_EXTRACT][rx-mmazoif2-s1j5v] start page=5 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazoif2-s1j5v] page 5/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazoif2-s1j5v] OCR vision start page=5 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazoif2-s1j5v] OCR vision page=5 rows=39 (27992ms)
+[RAW_EXTRACT][rx-mmazoif2-s1j5v] page 5/22 rows=39 cells=39 (29227ms)
+[RAW_EXTRACT][rx-mmazoif2-s1j5v] done sections=0 items=0 (29240ms)
+[RAW_EXTRACT][rx-mmazp5b1-g7wpx] start page=6 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazp5b1-g7wpx] page 6/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazp5b1-g7wpx] OCR vision start page=6 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazp5b1-g7wpx] OCR vision page=6 rows=26 (12910ms)
+[RAW_EXTRACT][rx-mmazp5b1-g7wpx] page 6/22 rows=26 cells=26 (14067ms)
+[RAW_EXTRACT][rx-mmazp5b1-g7wpx] done sections=1 items=3 (14083ms)
+[RAW_EXTRACT][rx-mmazpg8y-z617l] start page=7 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazpg8y-z617l] page 7/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazpg8y-z617l] OCR vision start page=7 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazpg8y-z617l] OCR vision page=7 rows=32 (19917ms)
+[RAW_EXTRACT][rx-mmazpg8y-z617l] page 7/22 rows=32 cells=32 (21050ms)
+[RAW_EXTRACT][rx-mmazpg8y-z617l] done sections=0 items=0 (21058ms)
+[RAW_EXTRACT][rx-mmazpwtp-3afs6] start page=8 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazpwtp-3afs6] page 8/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazpwtp-3afs6] OCR vision start page=8 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazpwtp-3afs6] OCR vision page=8 rows=31 (18196ms)
+[RAW_EXTRACT][rx-mmazpwtp-3afs6] page 8/22 rows=31 cells=31 (19035ms)
+[RAW_EXTRACT][rx-mmazpwtp-3afs6] done sections=1 items=4 (19055ms)
+[RAW_EXTRACT][rx-mmazqbls-5unl7] start page=9 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazqbls-5unl7] page 9/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazqbls-5unl7] OCR vision start page=9 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazqbls-5unl7] OCR vision page=9 rows=22 (10398ms)
+[RAW_EXTRACT][rx-mmazqbls-5unl7] page 9/22 rows=22 cells=22 (11275ms)
+[RAW_EXTRACT][rx-mmazqbls-5unl7] done sections=0 items=0 (11282ms)
+[RAW_EXTRACT][rx-mmazqkmj-ja9e5] start page=10 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazqkmj-ja9e5] page 10/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazqkmj-ja9e5] OCR vision start page=10 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazqkmj-ja9e5] OCR vision page=10 rows=25 (9667ms)
+[RAW_EXTRACT][rx-mmazqkmj-ja9e5] page 10/22 rows=25 cells=25 (10469ms)
+[RAW_EXTRACT][rx-mmazqkmj-ja9e5] done sections=0 items=0 (10480ms)
+[RAW_EXTRACT][rx-mmazqssk-sus6d] start page=11 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazqssk-sus6d] page 11/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazqssk-sus6d] OCR vision start page=11 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazqssk-sus6d] OCR vision page=11 rows=25 (11166ms)
+[RAW_EXTRACT][rx-mmazqssk-sus6d] page 11/22 rows=25 cells=25 (11946ms)
+[RAW_EXTRACT][rx-mmazqssk-sus6d] done sections=1 items=1 (11954ms)
+[RAW_EXTRACT][rx-mmazr2bi-7frnn] start page=12 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazr2bi-7frnn] page 12/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazr2bi-7frnn] OCR vision start page=12 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazr2bi-7frnn] OCR vision page=12 rows=68 (35057ms)
+[RAW_EXTRACT][rx-mmazr2bi-7frnn] page 12/22 rows=68 cells=68 (36531ms)
+[RAW_EXTRACT][rx-mmazr2bi-7frnn] done sections=0 items=0 (36540ms)
+[RAW_EXTRACT][rx-mmazrul3-n0kii] start page=13 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazrul3-n0kii] page 13/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazrul3-n0kii] OCR vision start page=13 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazrul3-n0kii] OCR vision page=13 rows=20 (11121ms)
+[RAW_EXTRACT][rx-mmazrul3-n0kii] page 13/22 rows=20 cells=20 (11856ms)
+[RAW_EXTRACT][rx-mmazrul3-n0kii] done sections=0 items=0 (11865ms)
+[RAW_EXTRACT][rx-mmazs41s-y2xr3] start page=14 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazs41s-y2xr3] page 14/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazs41s-y2xr3] OCR vision start page=14 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazs41s-y2xr3] OCR vision page=14 rows=59 (36693ms)
+[RAW_EXTRACT][rx-mmazs41s-y2xr3] page 14/22 rows=59 cells=59 (37954ms)
+[RAW_EXTRACT][rx-mmazs41s-y2xr3] done sections=0 items=0 (37967ms)
+[RAW_EXTRACT][rx-mmazsxez-qi9h4] start page=15 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazsxez-qi9h4] page 15/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazsxez-qi9h4] OCR vision start page=15 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazsxez-qi9h4] OCR vision page=15 rows=13 (7188ms)
+[RAW_EXTRACT][rx-mmazsxez-qi9h4] page 15/22 rows=13 cells=13 (8103ms)
+[RAW_EXTRACT][rx-mmazsxez-qi9h4] done sections=0 items=0 (8109ms)
+[RAW_EXTRACT][rx-mmazt3zr-x6887] start page=16 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazt3zr-x6887] page 16/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazt3zr-x6887] OCR vision start page=16 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazt3zr-x6887] OCR vision page=16 rows=29 (19456ms)
+[RAW_EXTRACT][rx-mmazt3zr-x6887] page 16/22 rows=29 cells=29 (20719ms)
+[RAW_EXTRACT][rx-mmazt3zr-x6887] done sections=1 items=1 (20727ms)
+[RAW_EXTRACT][rx-mmaztk2v-e3o5v] start page=17 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaztk2v-e3o5v] page 17/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaztk2v-e3o5v] OCR vision start page=17 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaztk2v-e3o5v] OCR vision page=17 rows=19 (7910ms)
+[RAW_EXTRACT][rx-mmaztk2v-e3o5v] page 17/22 rows=19 cells=19 (8871ms)
+[RAW_EXTRACT][rx-mmaztk2v-e3o5v] done sections=0 items=0 (8881ms)
+[RAW_EXTRACT][rx-mmaztr9r-71s7n] start page=18 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmaztr9r-71s7n] page 18/22 nativeCells=0
+[RAW_EXTRACT][rx-mmaztr9r-71s7n] OCR vision start page=18 timeoutMs=45000
+[RAW_EXTRACT][rx-mmaztr9r-71s7n] OCR vision page=18 rows=26 (22440ms)
+[RAW_EXTRACT][rx-mmaztr9r-71s7n] page 18/22 rows=26 cells=26 (23582ms)
+[RAW_EXTRACT][rx-mmaztr9r-71s7n] done sections=0 items=0 (23592ms)
+[RAW_EXTRACT][rx-mmazu9jy-1jull] start page=19 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazu9jy-1jull] page 19/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazu9jy-1jull] OCR vision start page=19 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazu9jy-1jull] OCR vision page=19 rows=24 (13237ms)
+[RAW_EXTRACT][rx-mmazu9jy-1jull] page 19/22 rows=24 cells=24 (14219ms)
+[RAW_EXTRACT][rx-mmazu9jy-1jull] done sections=0 items=0 (14229ms)
+[RAW_EXTRACT][rx-mmazukug-stsat] start page=20 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazukug-stsat] page 20/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazukug-stsat] OCR vision start page=20 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazukug-stsat] OCR vision page=20 rows=67 (25822ms)
+[RAW_EXTRACT][rx-mmazukug-stsat] page 20/22 rows=67 cells=67 (26878ms)
+[RAW_EXTRACT][rx-mmazukug-stsat] done sections=0 items=0 (26887ms)
+[RAW_EXTRACT][rx-mmazv5od-wydpt] start page=21 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazv5od-wydpt] page 21/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazv5od-wydpt] OCR vision start page=21 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazv5od-wydpt] OCR vision page=21 rows=62 (25454ms)
+[RAW_EXTRACT][rx-mmazv5od-wydpt] page 21/22 rows=62 cells=62 (26312ms)
+[RAW_EXTRACT][rx-mmazv5od-wydpt] done sections=1 items=13 (26321ms)
+[RAW_EXTRACT][rx-mmazvqau-3bej8] start page=22 maxPages=1 bytes=4021524 timeoutMs=70000
+[RAW_EXTRACT][rx-mmazvqau-3bej8] page 22/22 nativeCells=0
+[RAW_EXTRACT][rx-mmazvqau-3bej8] OCR vision start page=22 timeoutMs=45000
+[RAW_EXTRACT][rx-mmazvqau-3bej8] OCR vision page=22 rows=26 (12053ms)
+[RAW_EXTRACT][rx-mmazvqau-3bej8] page 22/22 rows=26 cells=26 (12859ms)
+[RAW_EXTRACT][rx-mmazvqau-3bej8] done sections=0 items=0 (12872ms)

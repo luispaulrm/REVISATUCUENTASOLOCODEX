@@ -11,14 +11,20 @@
   },
   "scripts": {
     "dev": "vite",
+    "dev:no-hmr": "powershell -NoProfile -Command \"$env:VITE_DISABLE_HMR='true'; vite\"",
     "build": "vite build && npm run build:server",
     "build:server": "echo 'Server uses TypeScript, no build needed'",
     "preview": "vite preview",
     "start": "tsx server/server.ts",
-    "server": "node --watch --import tsx server/server.ts",
-    "dev:all": "node scripts/update-version.js && concurrently \"npm run server\" \"node scripts/wait-for-port.js 5000 && npm run dev\"",
+    "server": "tsx server/server.ts",
+    "server:watch": "tsx watch server/server.ts",
+    "dev:all": "node scripts/ensure-port-free.js 5000 && node scripts/update-version.js && concurrently --names \"BACK,FRONT\" --prefix-colors \"cyan,magenta\" --kill-others --kill-others-on-fail \"npm run server\" \"node scripts/wait-for-port.js 5000 127.0.0.1 && npm run dev\"",
+    "dev:all:no-hmr": "node scripts/ensure-port-free.js 5000 && node scripts/update-version.js && concurrently --names \"BACK,FRONT\" --prefix-colors \"cyan,magenta\" --kill-others --kill-others-on-fail \"npm run server\" \"node scripts/wait-for-port.js 5000 127.0.0.1 && npm run dev:no-hmr\"",
+    "dev:reset": "node scripts/ensure-port-free.js 5000 --force && npm run dev:all",
     "check-config": "node --import tsx server/check-config.ts",
-    "test:apis": "node --import tsx server/test-apis.ts"
+    "test:apis": "node --import tsx server/test-apis.ts",
+    "test:m12-golden": "node --import tsx test_m12_hospital_full_golden.ts",
+    "eval:bill": "node --import tsx scripts/evaluate_bill_payload.ts"
   },
   "dependencies": {
     "@google/genai": "^1.34.0",

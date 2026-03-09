@@ -1,0 +1,65 @@
+
+> clinicbill-audit-extractor@0.0.0 server
+> tsx server/server.ts
+
+Loaded root environment from C:\REVISATUCUENTASOLOCODEX\.env
+Loaded root local environment from C:\REVISATUCUENTASOLOCODEX\.env.local
+Loaded server environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+ðŸš€ AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 118
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'AZURE_DOCUMENT_INTELLIGENCE_API_VERSION',
+  'AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT',
+  'AZURE_DOCUMENT_INTELLIGENCE_KEY',
+  'AZURE_DOCUMENT_INTELLIGENCE_KEY_SECONDARY',
+  'AZURE_DOCUMENT_INTELLIGENCE_TIMEOUT_MS',
+  'AZURE_DOCUMENT_INTELLIGENCE_TIMEOUT_MS_ROBUST',
+  'BABEL_DATADIR',
+  'BILL_COMPAT_V8',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_3972_1262719628',
+  'EFC_3972_1592913036',
+  'EFC_3972_2283032206',
+  'EFC_3972_2775293581'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+âœ… GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+âœ… GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+âœ… GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+âœ… GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+âœ… GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+âœ… OPENAI_API_KEY LOADED: sk-proj-...
+AZURE_DOCUMENT_INTELLIGENCE configured: https://chile2.cognitiveservices.azure.com (primary+secondary)
+==================================================
+
+Backend server running on port 5000

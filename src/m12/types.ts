@@ -46,3 +46,30 @@ export interface M12AuditResult {
   sections: M12Section[];
 }
 
+export type {
+  M12AuditContractVariant,
+  M12AuditGeometryRef,
+  M12AuditLiteralRef,
+  M12AuditResolution,
+  M12AuditSemanticRole,
+  M12AuditSourceKind,
+  M12AuditUnit,
+  M12AuditValueKind,
+  M12CanonicalContract,
+  M12CanonicalContractItem,
+  M12CanonicalContractRule,
+  M12CanonicalContractSection,
+  M12CanonicalFinancialTerm,
+  M12ContractCalco,
+  M12ContractCalcoCell,
+  M12ContractCalcoFootnote,
+  M12ContractCalcoHeader,
+  M12ContractCalcoPage,
+  M12ContractCalcoRow,
+  M12ContractCalcoScope,
+  M12ContractDoctrine,
+  M12ContractDoctrineColumn,
+  M12ContractDoctrineFootnoteLink,
+  M12ContractDoctrineScopeAssignment,
+  M12ContractReconstructibility,
+} from './contractAuditSchema';

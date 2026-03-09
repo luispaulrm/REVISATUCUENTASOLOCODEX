@@ -34,7 +34,14 @@ export default function CanonicalGeneratorApp() {
 
     useEffect(() => {
         fetch('/api/contract-count')
-            .then(res => res.json())
+            .then(async (res) => {
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const contentType = res.headers.get('content-type') || '';
+                if (!contentType.includes('application/json')) {
+                    throw new Error(`Respuesta no JSON en /api/contract-count (HTTP ${res.status})`);
+                }
+                return res.json();
+            })
             .then(data => setContractCount(data.count))
             .catch(err => console.error('Error fetching contract count:', err));
     }, []);

@@ -1,15 +1,8 @@
 import { Request, Response } from 'express';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { AI_CONFIG } from "../config/ai.config.js";
-import fs from 'fs/promises';
-import path from 'path';
 import { getRelevantKnowledge, extractCaseKeywords } from '../services/knowledgeFilter.service.js';
-import { PersistentMemoryService } from '../services/persistentMemory.service.js';
-
-import { fileURLToPath } from 'url';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const KNOWLEDGE_DIR = path.join(__dirname, '../knowledge');
+import { GeminiService } from '../services/gemini.service.js';
 
 // Helper to get all API keys (copied from server.ts pattern or shared utility if available)
 // ... (rest of imports and helpers)
@@ -25,6 +18,20 @@ const getApiKeys = () => {
     return [...new Set(keys)].filter(k => !!k);
 };
 
+function clipText(input: string, maxChars: number): string {
+    const value = String(input || '');
+    if (value.length <= maxChars) return value;
+    return `${value.slice(0, maxChars)}\n...[TRUNCATED ${value.length - maxChars} chars]`;
+}
+
+function compactJson(input: any, maxChars: number): string {
+    try {
+        return clipText(JSON.stringify(input), maxChars);
+    } catch {
+        return '';
+    }
+}
+
 export const handleAskAuditor = async (req: Request, res: Response) => {
     console.log(`[ASK] New interrogation request`);
 
@@ -32,7 +39,7 @@ export const handleAskAuditor = async (req: Request, res: Response) => {
     res.setHeader('Content-Type', 'text/plain; charset=utf-8');
     res.setHeader('Transfer-Encoding', 'chunked');
 
-    const { question, context, images } = req.body; // Added images support
+    const { question, context, images, preferredModel } = req.body; // Added images support
 
     if (!question) {
         return res.status(400).send("Falta la pregunta.");
@@ -49,8 +56,8 @@ export const handleAskAuditor = async (req: Request, res: Response) => {
     let extraLiterature = "";
     try {
         const keywords = extractCaseKeywords(billJson, pamJson, contractJson, htmlContext);
-        const filteredKnowledge = await getRelevantKnowledge(keywords, 40000, (msg) => console.log(`[ASK-KNOWLEDGE] ${msg}`));
-        extraLiterature = filteredKnowledge.text;
+        const filteredKnowledge = await getRelevantKnowledge(keywords, 12000, (msg) => console.log(`[ASK-KNOWLEDGE] ${msg}`));
+        extraLiterature = clipText(filteredKnowledge.text || '', 10000);
 
         console.log(`[ASK] Filtered knowledge loaded: ${filteredKnowledge.sources.join(', ')} (${filteredKnowledge.tokenEstimate} tokens)`);
     } catch (err) {
@@ -100,7 +107,7 @@ export const handleAskAuditor = async (req: Request, res: Response) => {
         --------------------
         1. PROYECCIÓN VISUAL (HTML): 
            ${htmlContext ? "Disponible (Prioridad Alta para validación visual)" : "No disponible"}
-           ${htmlContext ? `[INICIO HTML]${htmlContext.substring(0, 150000)}[FIN HTML]` : ""}
+           ${htmlContext ? `[INICIO HTML]${clipText(htmlContext, 12000)}[FIN HTML]` : ""}
         
         2. DATA ESTRUCTURADA (JSON):
            - Cuenta: ${billJson ? "Disponible" : "No disponible"}
@@ -110,10 +117,10 @@ export const handleAskAuditor = async (req: Request, res: Response) => {
 
         --------------------
         DATOS JSON DEL CASO:
-        ${finalContractData}
-        ${pamJson ? `PAM: ${JSON.stringify(pamJson)}` : ""}
-        ${billJson ? `CUENTA: ${JSON.stringify(billJson)}` : ""}
-        ${auditResult ? `RESULTADOS AUDITORÍA: ${JSON.stringify(auditResult)}` : ""}
+        ${clipText(finalContractData, 12000)}
+        ${pamJson ? `PAM: ${compactJson(pamJson, 12000)}` : ""}
+        ${billJson ? `CUENTA: ${compactJson(billJson, 12000)}` : ""}
+        ${auditResult ? `RESULTADOS AUDITORÍA: ${compactJson(auditResult, 12000)}` : ""}
         --------------------
 
         TU MISIÓN:
@@ -132,15 +139,17 @@ export const handleAskAuditor = async (req: Request, res: Response) => {
         RESPUESTA:
     `;
 
-    // Import GeminiService para acceder a servicios
-    const { GeminiService } = require('../services');
     const geminiService = new GeminiService();
 
     // Construir modelos a intentar (primero OpenAI, luego Gemini)
-    const modelsToTry = [
+    let modelsToTry = [
         AI_CONFIG.ACTIVE_MODEL,
         ...(Array.isArray(AI_CONFIG.FALLBACK_MODELS) ? AI_CONFIG.FALLBACK_MODELS : [])
     ].filter(Boolean);
+
+    if (typeof preferredModel === 'string' && preferredModel.trim().length > 0) {
+        modelsToTry = [preferredModel.trim(), ...modelsToTry];
+    }
     
     // Eliminar duplicados manteniendo orden
     const uniqueModels = [...new Set(modelsToTry)];

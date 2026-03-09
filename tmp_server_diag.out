@@ -1,0 +1,61 @@
+
+> clinicbill-audit-extractor@0.0.0 server
+> tsx server/server.ts
+
+✅ Loaded environment from C:\REVISATUCUENTASOLOCODEX\server\.env
+
+==================================================
+🚀 AUDIT SERVER BOOTSTRAP
+
+=== RAILWAY CONTEXT ===
+SERVICE: N/A
+ENV: N/A
+PROJECT: N/A
+=======================
+
+[ENV_CHECK] Total Vars: 100
+[ENV_CHECK] Keys sample: [
+  'ALLUSERSPROFILE',
+  'API_KEY',
+  'APPDATA',
+  'APPLICATION_INSIGHTS_NO_STATSBEAT',
+  'BABEL_DATADIR',
+  'ChocolateyInstall',
+  'ChocolateyLastPathUpdate',
+  'CHROME_CRASHPAD_PIPE_NAME',
+  'CODEX_INTERNAL_ORIGINATOR_OVERRIDE',
+  'CODEX_THREAD_ID',
+  'COLOR',
+  'CommonProgramFiles',
+  'CommonProgramFiles(x86)',
+  'CommonProgramW6432',
+  'COMPUTERNAME',
+  'ComSpec',
+  'DEBUG',
+  'DriverData',
+  'EDITOR',
+  'EFC_11128_1592913036',
+  'ELECTRON_RUN_AS_NODE',
+  'GEMINI_API_KEY',
+  'GEMINI_API_KEY_QUATERNARY',
+  'GEMINI_API_KEY_QUINARY',
+  'GEMINI_API_KEY_SECONDARY',
+  'GEMINI_API_KEY_TERTIARY',
+  'GOPATH',
+  'HOME',
+  'HOMEDRIVE',
+  'HOMEPATH'
+]
+[ENV_CHECK] NODE_ENV: development
+[ENV_CHECK] has PORT: true
+[ENV_CHECK] has RAILWAY_PROJECT_ID: false
+[ENV_CHECK] GEMINI KEY PRESENT: true
+✅ GEMINI_API_KEY LOADED
+   Key preview: AIzaSyBn...YiLA
+✅ GEMINI_API_KEY_SECONDARY LOADED: AIzaSyA6...
+✅ GEMINI_API_KEY_TERTIARY LOADED: AIzaSyAX...
+✅ GEMINI_API_KEY_QUATERNARY LOADED: AIzaSyAl...
+✅ GEMINI_API_KEY_QUINARY LOADED: AIzaSyCe...
+✅ OPENAI_API_KEY LOADED: sk-proj-...
+==================================================
+
