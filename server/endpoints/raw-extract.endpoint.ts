@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
-import OpenAI from 'openai';
+import { OpenAIService } from '../services/openai.service.js';
+import { ReconstructionService } from '../services/reconstruction.service.js';
 import { createHash } from 'node:crypto';
 
 type RawCell = {
@@ -136,10 +137,9 @@ function resolveAzureLayoutKeys(): string[] {
 }
 
 function resolveAzureLayoutEnabled(): boolean {
+  if (process.env.AZURE_DISABLED === 'true') return false;
   const endpoint = String(process.env.AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT || '').trim();
   const keys = resolveAzureLayoutKeys();
-  const flag = String(process.env.AZURE_DOCUMENT_INTELLIGENCE_ENABLED || '').trim().toLowerCase();
-  if (flag === '1' || flag === 'true' || flag === 'yes') return endpoint.length > 0 && keys.length > 0;
   return endpoint.length > 0 && keys.length > 0;
 }
 
@@ -741,6 +741,183 @@ function parseOcrDetailDescription(text: string): string {
 }
 
 
+// ── parseDocumentHeader ───────────────────────────────────────────────────────
+// Scans rawMetadataRows (rows that are NOT bill items) to extract patient data,
+// clinic data, and document metadata from the PDF header.
+// Uses regex patterns common in Chilean hospital bills (Clínica Las Condes,
+// Clínica Alemana, Red UC, Hospital del Salvador, etc.).
+interface DocumentHeader {
+    clinicName?: string;
+    clinicRUT?: string;
+    clinicAddress?: string;
+    patientName?: string;
+    patientRUT?: string;
+    patientDOB?: string;
+    patientPrevisión?: string;
+    attendingPhysician?: string;
+    diagnosisPrincipal?: string;
+    admissionDate?: string;
+    dischargeDate?: string;
+    invoiceNumber?: string;
+    isapre?: string;
+}
+
+function parseDocumentHeader(
+    rows: Array<{ page: number; rowIndex: number; text: string; y: number }>
+): DocumentHeader {
+    const result: DocumentHeader = {};
+
+    // Normalise: lowercase, remove accents, keep original in parallel for value extraction
+    const norm = (s: string) => (s || '').toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+
+    // RUT pattern: XX.XXX.XXX-X or XXXXXXXX-X
+    const RUT_RE = /\b(\d{1,2}\.?\d{3}\.?\d{3}-[\dkK])\b/;
+    // Date pattern: DD/MM/YYYY or DD-MM-YYYY or YYYY-MM-DD
+    const DATE_RE = /\b(\d{2}[\/\-]\d{2}[\/\-]\d{4}|\d{4}[\/\-]\d{2}[\/\-]\d{2})\b/;
+    // Folio / N° cuenta pattern
+    const FOLIO_RE = /(?:n[°º]?\s*(?:cuenta|folio|liquidaci[oó]n|boleta|factura|orden)[:\s]*|folio[:\s]+)(\d+)/i;
+    const FOLIO_BARE_RE = /^(?:n[°º]?\s*)(\d{5,})\s*$/i;
+
+    // Page-1 rows sorted by y descending (top of page first in typical coord systems)
+    const page1 = rows.filter(r => r.page === 1).sort((a, b) => b.y - a.y);
+    // All rows page 1 + page 2 for full header
+    const allHeaderRows = rows.filter(r => r.page <= 2).sort((a, b) => b.y - a.y);
+
+    // ── 1. Clinic name: first non-trivial text row on page 1 at top ──────────
+    for (const row of page1) {
+        const t = row.text.trim();
+        // Skip rows that look like column headers, amounts, or very short strings
+        if (t.length < 6) continue;
+        if (/^\d/.test(t)) continue;                           // starts with number
+        if (/copago|bonific|arancel|cantidad|valor|total/i.test(t)) continue;
+        if (/paciente|fecha|rut|ingreso|alta|folio|n[°º]/i.test(t)) continue;
+        // Accept: likely a clinic/hospital name
+        if (
+            /cl[ií]nica|hospital|centro|spa|ltda|s\.a\.|salud|m[eé]dic/i.test(t) ||
+            t.toUpperCase() === t && t.length > 8  // ALL CAPS institution name
+        ) {
+            result.clinicName = t;
+            break;
+        }
+        // Fallback: first long-ish row at top that isn't a known label
+        if (!result.clinicName && t.length > 10 && !/[:=]/.test(t)) {
+            result.clinicName = t;
+        }
+    }
+
+    // ── 2. Scan all header rows for labelled fields ───────────────────────────
+    for (const row of allHeaderRows) {
+        const raw = row.text.trim();
+        const n = norm(raw);
+
+        // RUT clínica (if not yet found, search near clinic name rows)
+        if (!result.clinicRUT && RUT_RE.test(raw) && !result.patientRUT) {
+            // If we already have a clinic name, first RUT found is likely the clinic's
+            if (result.clinicName) {
+                result.clinicRUT = raw.match(RUT_RE)?.[1];
+            }
+        }
+
+        // Dirección / address
+        if (!result.clinicAddress &&
+            /\b(av\.|avenida|calle|camino|pasaje|pje\.|santa|san |los |las |el )/i.test(raw) &&
+            raw.length > 10) {
+            result.clinicAddress = raw;
+        }
+
+        // Paciente / nombre
+        if (!result.patientName) {
+            const m = raw.match(/(?:paciente|nombre(?: del paciente)?|patient)[:\s]+([A-ZÁÉÍÓÚÑ][A-Za-záéíóúñ\s]{4,50})/i);
+            if (m) result.patientName = m[1].trim();
+        }
+
+        // RUT paciente
+        if (!result.patientRUT) {
+            const m = raw.match(/(?:rut(?:\s*paciente)?|r\.u\.t\.)[:\s]*([\d\.\-kK]+)/i);
+            if (m && RUT_RE.test(m[1])) result.patientRUT = m[1].trim();
+        }
+
+        // Fecha nacimiento
+        if (!result.patientDOB) {
+            const m = raw.match(/(?:f(?:echa)?\.?\s*(?:de\s*)?nac(?:imiento)?|nacimiento)[:\s]+(\S+)/i);
+            if (m) {
+                const d = m[1].match(DATE_RE);
+                result.patientDOB = d ? d[1] : m[1];
+            }
+        }
+
+        // Previsión / ISAPRE del paciente
+        if (!result.patientPrevisión) {
+            const m = raw.match(/(?:previsi[oó]n|isapre|fonasa|previs\.)[:\s]+([A-Za-záéíóúñ\s]{3,40})/i);
+            if (m) result.patientPrevisión = m[1].trim();
+        }
+
+        // Médico tratante
+        if (!result.attendingPhysician) {
+            const m = raw.match(/(?:m[eé]dico\s*tratante|dr\.?|dra\.?|cirujano)[:\s]+([A-ZÁÉÍÓÚÑ][A-Za-záéíóúñ\s\.]{4,50})/i);
+            if (m) result.attendingPhysician = m[1].trim();
+        }
+
+        // Diagnóstico
+        if (!result.diagnosisPrincipal) {
+            const m = raw.match(/(?:diagn[oó]stico(?:\s*(?:principal|de\s*egreso))?|dx)[:\s]+(.{5,120})/i);
+            if (m) result.diagnosisPrincipal = m[1].trim();
+        }
+
+        // Fecha ingreso
+        if (!result.admissionDate) {
+            const m = raw.match(/(?:(?:fecha\s*(?:de\s*)?)?ingreso|admisi[oó]n|entrada)[:\s]+(\S+(?:\s+\S+)?)/i);
+            if (m) {
+                const d = m[1].match(DATE_RE);
+                if (d) result.admissionDate = d[1];
+            }
+        }
+
+        // Fecha alta
+        if (!result.dischargeDate) {
+            const m = raw.match(/(?:(?:fecha\s*(?:de\s*)?)?alta|egreso|salida)[:\s]+(\S+(?:\s+\S+)?)/i);
+            if (m) {
+                const d = m[1].match(DATE_RE);
+                if (d) result.dischargeDate = d[1];
+            }
+        }
+
+        // Folio / N° cuenta
+        if (!result.invoiceNumber) {
+            const m = raw.match(FOLIO_RE);
+            if (m) { result.invoiceNumber = m[1].trim(); continue; }
+            const m2 = raw.match(FOLIO_BARE_RE);
+            if (m2 && /folio|n[°º]|cuenta|liquid/i.test(n)) result.invoiceNumber = m2[1].trim();
+        }
+
+        // ISAPRE
+        if (!result.isapre) {
+            const m = raw.match(/(?:isapre|fonasa)[:\s]+([A-Za-z\s]{3,40})/i);
+            if (m && !/paciente|rut|plan/i.test(m[1])) result.isapre = m[1].trim();
+        }
+
+        // RUT clínica — segunda pasada si tiene etiqueta explícita
+        if (!result.clinicRUT) {
+            const m = raw.match(/(?:rut\s*(?:cl[ií]nica|hospital|prestador|empresa)?)[:\s]*([\d\.\-kK]+)/i);
+            if (m && RUT_RE.test(m[1])) result.clinicRUT = m[1].trim();
+        }
+    }
+
+    // ── 3. Fallback: any standalone RUT not yet assigned ──────────────────────
+    if (!result.patientRUT || !result.clinicRUT) {
+        for (const row of allHeaderRows) {
+            const m = row.text.match(RUT_RE);
+            if (!m) continue;
+            const rut = m[1];
+            if (!result.clinicRUT && result.clinicName) { result.clinicRUT = rut; continue; }
+            if (!result.patientRUT && result.patientName) { result.patientRUT = rut; }
+        }
+    }
+
+    return result;
+}
+
 function buildSectionsFromOcrRows(payload: RawExtractPayload): any[] {
   const byCategory = new Map<string, any>();
   const order: string[] = [];
@@ -1321,138 +1498,35 @@ export async function extractRawPdfPayload(
     const page = await pdf.getPage(pageNumber);
     const viewport = page.getViewport({ scale: 1.0 });
     const textContent = await page.getTextContent();
+
     let cells = toRawCells((textContent as any).items || []);
-    let pageOcrSource: RawPage['ocrSource'] = cells.length > 0 ? 'native-textlayer' : 'unknown';
     let pageClass: VisionPageClass = { pageClass: 'unknown', confidence: 0, reason: 'not_classified' };
     let baseVisionPng: string | null = null;
-    let seededByAzure = false;
+    
     console.log(
-      `[RAW_EXTRACT${traceId ? `][${traceId}` : ''}] page ${pageNumber}/${pdf.numPages} mode=${mode} nativeCells=${cells.length} forceVision=${forceVision} renderScale=${renderScale}`
+      `[RAW_EXTRACT${traceId ? `][${traceId}` : ''}] page ${pageNumber}/${pdf.numPages} mode=${mode} using Universal M13 Logic (Offline)`
     );
 
-    const azureDocLines = azureDocPagesByNumber?.get(pageNumber) || [];
-    if (azureDocLines.length > 0) {
-      let azureCells = synthCellsFromAzureLines(azureDocLines, viewport.height, viewport.width);
-      let azureRows = groupCellsIntoRows(azureCells, computeYTolerance(azureCells));
-      if (azureRows.length <= 2 && azureDocLines.length >= 20) {
-        const sequentialRows = azureDocLines.map((line) => String(line.content || '').trim()).filter((text) => text.length > 0);
-        const sequentialCells = synthCellsFromOcrRows(sequentialRows, viewport.height);
-        const sequentialGrouped = groupCellsIntoRows(sequentialCells, computeYTolerance(sequentialCells));
-        if (sequentialGrouped.length > azureRows.length) {
-          azureCells = sequentialCells;
-          azureRows = sequentialGrouped;
-          console.warn(
-            `[RAW_EXTRACT${traceId ? `][${traceId}` : ''}] page ${pageNumber}/${pdf.numPages} Azure DI doc y-normalized fallback -> sequential rows=${azureRows.length}`
-          );
-        }
-      }
-      if (azureRows.length > 0) {
-        cells = azureCells;
-        seededByAzure = true;
-        pageOcrSource = 'azure-layout';
-        console.log(
-          `[RAW_EXTRACT${traceId ? `][${traceId}` : ''}] page ${pageNumber}/${pdf.numPages} using Azure DI doc rows=${azureRows.length}`
-        );
-      }
-    }
-
-    // Azure-first for all pages: fallback to per-page Azure call when doc cache has no rows for this page.
-    if (!seededByAzure) {
-      baseVisionPng = await renderPageToPngBase64(page, renderScale);
-      const azureLinesFast = await azureAnalyzeLayoutFromPageImage(baseVisionPng, pageNumber, traceId, mode);
-      if (azureLinesFast.length > 0) {
-        const azureCells = synthCellsFromAzureLines(azureLinesFast, viewport.height, viewport.width);
-        const azureRows = groupCellsIntoRows(azureCells, computeYTolerance(azureCells));
-        if (azureRows.length > 0) {
-          cells = azureCells;
-          seededByAzure = true;
-          pageOcrSource = 'azure-layout';
-          console.log(
-            `[RAW_EXTRACT${traceId ? `][${traceId}` : ''}] page ${pageNumber}/${pdf.numPages} using Azure DI rows=${azureRows.length}`
-          );
-        }
-      }
-    }
-
-    if (!seededByAzure && (cells.length === 0 || forceVision)) {
-      if (!baseVisionPng) {
-        baseVisionPng = await renderPageToPngBase64(page, renderScale);
-      }
-      if (!effectiveAzureOnlyMode) {
-        const ocrRows = await visionOcrRowsFromImage(baseVisionPng, pageNumber, traceId, { mode, timeoutMs: ocrVisionTimeoutMs });
-        if (ocrRows.length > 0) {
-          cells = synthCellsFromOcrRows(ocrRows, viewport.height);
-          pageOcrSource = 'openai-ocr';
-        } else if (cells.length === 0) {
-          console.warn(
-            `[RAW_EXTRACT${traceId ? `][${traceId}` : ''}] page ${pageNumber}/${pdf.numPages} mode=${mode} OCR vision returned 0 rows.`
-          );
-        }
-      } else {
-        console.warn(
-          `[RAW_EXTRACT${traceId ? `][${traceId}` : ''}] page ${pageNumber}/${pdf.numPages} mode=${mode} Azure-only activo: se omite fallback OpenAI OCR.`
-        );
-      }
-    }
+    // M13 Universal Logic: Offline Reconstruction + Row Stitching
     const yTolerance = computeYTolerance(cells);
-    let rows = groupCellsIntoRows(cells, yTolerance);
+    const rows = ReconstructionService.reconstructPage(cells as any, { 
+      yTolerance, 
+      stitchEnabled: true,
+      traceId 
+    });
 
-    // Hard-page reinforcement: if OCR result is too sparse, run a second stronger pass.
-    const weakRows = rows.filter((r) => String(r.text || '').trim().length > 0).length < 6;
-    if (weakRows && (mode === 'robust' || forceVision)) {
-      const boostedScale = clamp(Math.max(renderScale + 0.5, 2.6), 1.2, 3.2);
-      const boostedPng = await renderPageToPngBase64(page, boostedScale);
-      const azureLines = await azureAnalyzeLayoutFromPageImage(boostedPng, pageNumber, traceId, 'robust');
-      if (azureLines.length > 0) {
-        const azureRows = azureLines.map((line) => line.content).filter((t) => t.length > 0);
-        const azureCells = synthCellsFromOcrRows(azureRows, viewport.height);
-        const azureGrouped = groupCellsIntoRows(azureCells, computeYTolerance(azureCells));
-        if (azureGrouped.length > rows.length) {
-          cells = azureCells;
-          rows = azureGrouped;
-          baseVisionPng = boostedPng;
-          pageOcrSource = 'azure-layout';
-          console.log(
-            `[RAW_EXTRACT${traceId ? `][${traceId}` : ''}] page ${pageNumber}/${pdf.numPages} reinforced with Azure DI rows=${rows.length}`
-          );
-        }
-      }
-      if (!seededByAzure && !effectiveAzureOnlyMode) {
-        const boostedRows = await visionOcrRowsFromImage(boostedPng, pageNumber, traceId, {
-          mode: 'robust',
-          timeoutMs: Math.max(ocrVisionTimeoutMs, 95000)
-        });
-        if (boostedRows.length > 0) {
-          const boostedCells = synthCellsFromOcrRows(boostedRows, viewport.height);
-          const boostedGrouped = groupCellsIntoRows(boostedCells, computeYTolerance(boostedCells));
-          if (boostedGrouped.length > rows.length) {
-            cells = boostedCells;
-            rows = boostedGrouped;
-            baseVisionPng = boostedPng;
-            pageOcrSource = 'openai-ocr';
-            console.log(
-              `[RAW_EXTRACT${traceId ? `][${traceId}` : ''}] page ${pageNumber}/${pdf.numPages} reinforced rows ${rows.length} (scale=${boostedScale})`
-            );
-          }
-        }
-      }
-      if (!seededByAzure && effectiveAzureOnlyMode) {
-        console.warn(
-          `[RAW_EXTRACT${traceId ? `][${traceId}` : ''}] page ${pageNumber}/${pdf.numPages} robust: Azure-only activo, sin fallback OpenAI OCR.`
-        );
-      }
-    }
-    if (!baseVisionPng && (mode === 'robust' || forceVision || rows.length === 0)) {
-      baseVisionPng = await renderPageToPngBase64(page, Math.max(1.8, renderScale));
-    }
-    // Page classification is expensive; run only on robust/forced passes to avoid request 504 on fast mode.
-    if (baseVisionPng && (mode === 'robust' || forceVision)) {
+    const pageOcrSource: RawPage['ocrSource'] = 'native-textlayer';
+
+    // Optional Vision classification if mode is robust
+    if (mode === 'robust' || forceVision) {
+      baseVisionPng = await renderPageToPngBase64(page, renderScale);
       pageClass = await classifyPageWithVision(baseVisionPng, pageNumber, traceId, {
         mode: mode === 'robust' ? 'robust' : 'fast',
         timeoutMs: Math.max(35000, Math.min(ocrVisionTimeoutMs, 90000))
       });
     }
-    const pageText = rows.map((row) => row.text).join('\n');
+
+    const pageText = rows.map((row: any) => row.text).join('\n');
 
     pages.push({
       pageNumber,
@@ -1460,13 +1534,16 @@ export async function extractRawPdfPayload(
       height: viewport.height,
       yTolerance,
       text: pageText,
-      rows,
+      rows: rows as any,
       items: cells,
-      ocrSource: pageOcrSource || 'unknown',
+      ocrSource: pageOcrSource,
       pageClass: pageClass.pageClass,
       pageClassConfidence: pageClass.confidence,
       pageClassReason: pageClass.reason
     });
+    console.log(
+      `[RAW_EXTRACT${traceId ? `][${traceId}` : ''}] page ${pageNumber}/${pdf.numPages} rows=${rows.length} cells=${cells.length} (Stitched)`
+    );
     console.log(
       `[RAW_EXTRACT${traceId ? `][${traceId}` : ''}] page ${pageNumber}/${pdf.numPages} rows=${rows.length} cells=${cells.length} (${Date.now() - pageStartedAt}ms)`
     );
@@ -1678,14 +1755,34 @@ export async function buildRawExtractAccountWithPage(
   const totalItems = sections.reduce((acc: number, section: any) => acc + (section.items?.length || 0), 0);
   const extractedTotal = sections.reduce((acc: number, section: any) => acc + (section.sectionTotal || 0), 0);
 
+  // ── Parseo de encabezado del documento ────────────────────────────────────
+  // rawMetadataRows contiene todas las filas que no son ítems de la cuenta.
+  // Se extraen datos personales del paciente, del prestador y del documento.
+  const docHeader = parseDocumentHeader(rawMetadataRows);
+
   return {
     mode: payload.mode,
-    clinicName: 'RAW_PDF_1_1',
-    patientName: 'N/A',
+    // Prestador
+    clinicName: docHeader.clinicName || 'DESCONOCIDO',
+    clinicRUT: docHeader.clinicRUT,
+    clinicAddress: docHeader.clinicAddress,
+    // Paciente
+    patientName: docHeader.patientName || 'Paciente Desconocido',
+    patientRUT: docHeader.patientRUT,
+    patientDOB: docHeader.patientDOB,
+    patientPrevisión: docHeader.patientPrevisión,
     patientEmail: 'N/A',
-    invoiceNumber: 'N/A',
-    date: '',
+    // Evento clínico
+    attendingPhysician: docHeader.attendingPhysician,
+    diagnosisPrincipal: docHeader.diagnosisPrincipal,
+    admissionDate: docHeader.admissionDate,
+    dischargeDate: docHeader.dischargeDate,
+    // Documento
+    invoiceNumber: docHeader.invoiceNumber || 'N/A',
+    date: docHeader.admissionDate || '',
     currency: 'CLP',
+    isapre: docHeader.isapre,
+    // Cuenta
     sections,
     clinicStatedTotal: 0,
     extractedTotal,
